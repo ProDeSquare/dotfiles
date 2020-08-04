@@ -1,0 +1,2 @@
+export PATH="$HOME/.config/composer/vendor/laravel/installer/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

@@ -1,0 +1,82 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/hamza/
+	..
+1595705557
+'b
+	/home/hamza/bin/
+	..
+1595705557
+'h
+	/home/hamza/
+	..
+1595705557
+'z
+	/home/hamza/.config/vifm
+	..
+1595705557
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/hamza
+	Downloads
+2
+d/home/hamza/Downloads
+	..
+0
+d/home/hamza
+	Downloads
+2
+d/home/hamza/Downloads
+	compressed
+1
+d/home/hamza/Downloads/compressed
+	www
+2
+d/home/hamza/Downloads/compressed/www
+	phpMyAdmin-5.0.2.zip
+1
+d
+
+# Right window history (oldest to newest):
+D/home/hamza
+	..
+0
+D
+
+# Command line history (oldest to newest):
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

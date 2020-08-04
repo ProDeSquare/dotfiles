@@ -1,0 +1,8 @@
+# PROMPT="%{$fg[yellow]%}%n %{$reset_color%}at %{$fg[magenta]%}%M %{$reset_color%}in %{$fg[green]%}%1~ "$'\n'"%{$reset_color%}» "
+# RPROMPT="%{$fg[blue]%}[%{$fg[red]%}%*%{$fg[blue]%}]%{$reset_color%}"
+
+# PROMPT="[%{$fg[white]%}%1~%{$reset_color%}]$ "
+
+# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%}ﰲ %{$fg[white]%}%1~"$'\n'"%{$fg[blue]%}%{$reset_color%} "
+
+PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$reset_color%}🐧 "

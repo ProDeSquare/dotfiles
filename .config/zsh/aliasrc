@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Basic aliases
+alias \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -Iv" \
+    mkd="mkdir -pv" \
+    yt="youtube-dl --add-metadata -i" \
+    vg="vagrant"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# commands too long
+alias \
+	ka="killall" \
+	g="git" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="sudo pacman" \
+	xi="sudo xbps-install" \
+	xr="sudo xbps-remove -R" \
+	xq="xbps-query"
+
+eval $(thefuck --alias)

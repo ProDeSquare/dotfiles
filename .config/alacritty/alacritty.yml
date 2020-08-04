@@ -1,0 +1,196 @@
+# Hamza Mughal's configuration of Alacritty
+
+env:
+  TERM: xterm-256color
+
+window:
+  # setting to 0 ignores this setting
+  # eg: colums: 80, lines: 24
+  dimensions:
+    columns: 0
+    lines: 0
+
+  # specifying padding on both x & y axis
+  padding:
+    x: 0
+    y: 0
+
+  # Add padding automatically where needed
+  dynamic_padding: true
+
+  # Remove border and title from the terminal
+  # Best for tiling window managers
+  decorations: none
+
+  # title of the terminal
+  # title: Alacritty
+
+  # telling alacrity to use dark theme
+  gtk_theme_variant: dark
+
+# font configuration
+font:
+  normal:
+    family: Jetbrains Mono Nerd Font
+
+  bold:
+    family: Jetbrains Mono Nerd Font
+
+  italic:
+    family: Jetbrains Mono Nerd Font
+
+  bold_italic:
+    family: Jetbrains Mono Nerd Font
+
+  # font-size, given in points
+  size: 9.0
+
+# Colors (Halcyon)
+colors:
+  # Default colors
+  primary:
+    background: '0x1d2433'
+    foreground: '0xa2aabc'
+
+  # Normal colors
+  normal:
+    black:   '0x171c28'
+    red:     '0xef6b73'
+    green:   '0xbae67e'
+    yellow:  '0xffd580'
+    blue:    '0x5ccfe6'
+    magenta: '0xc3a6ff'
+    cyan:    '0x5ccfe6'
+    white:   '0xd7dce2'
+
+  # Bright colors
+  bright:
+    black:   '0x8695b7'
+    red:     '0xf07178'
+    green:   '0xbae67e'
+    yellow:  '0xffd580'
+    blue:    '0x5ccfe6'
+    magenta: '0xc3a6ff'
+    cyan:    '0x5ccfe6'
+    white:   '0xd7dce2'
+
+# Colors (Ayu Mirage)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#202734'
+#     foreground: '#CBCCC6'
+
+#   # Normal colors
+#   normal:
+#     black: '#191E2A'
+#     red: '#FF3333'
+#     green: '#BAE67E'
+#     yellow: '#FFA759'
+#     blue: '#73D0FF'
+#     magenta: '#FFD580'
+#     cyan: '#95E6CB'
+#     white: '#C7C7C7'
+
+#   # Bright colors
+#   bright:
+#     black: '#686868'
+#     red: '#F27983'
+#     green: '#A6CC70'
+#     yellow: '#FFCC66'
+#     blue: '#5CCFE6'
+#     magenta: '#FFEE99'
+#     cyan: '#95E6CB'
+#     white: '#FFFFFF'
+
+# Colors (Gruvbox dark)
+# colors:
+#   # Default colors
+#   primary:
+#     # hard contrast: background = '#1d2021'
+#     background: '#282828'
+#     # soft contrast: background = '#32302f'
+#     foreground: '#ebdbb2'
+
+#   # Normal colors
+#   normal:
+#     black:   '#282828'
+#     red:     '#cc241d'
+#     green:   '#98971a'
+#     yellow:  '#d79921'
+#     blue:    '#458588'
+#     magenta: '#b16286'
+#     cyan:    '#689d6a'
+#     white:   '#a89984'
+
+#   # Bright colors
+#   bright:
+#     black:   '#928374'
+#     red:     '#fb4934'
+#     green:   '#b8bb26'
+#     yellow:  '#fabd2f'
+#     blue:    '#83a598'
+#     magenta: '#d3869b'
+#     cyan:    '#8ec07c'
+#     white:   '#ebdbb2'
+
+  indexed_colors: []
+
+# background_opacity: 1
+background_opacity: 0.75
+
+# Allow terminal applications to change Alacritty's window title.
+dynamic_title: true
+
+# cursor styles
+cursor:
+  # Cursor style
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam
+
+  # cursor becomes hollow when window is unfocused
+  unfocused_hollow: true
+
+# Automatically reload alacrity on edit
+live_config_reload: true
+
+# mouse settings
+mouse:
+  # Hide mouse pointer while typing
+  hide_when_typing: true
+
+# Custom keybindings
+key_bindings:
+  - { key: V,        mods: Alt,             action: Paste            }
+  - { key: C,        mods: Alt,             action: Copy             }
+  - { key: Key0,     mods: Alt,             action: ResetFontSize    }
+  - { key: K,        mods: Alt,             action: IncreaseFontSize }
+  - { key: J,        mods: Alt,             action: DecreaseFontSize }
+  - { key: K,        mods: Control|Shift,   action: ScrollLineUp     }
+  - { key: J,        mods: Control|Shift,   action: ScrollLineDown   }
+
+# More actions to choose from
+
+#   - Copy
+#   - Paste
+#   - PasteSelection
+#   - IncreaseFontSize
+#   - DecreaseFontSize
+#   - ResetFontSize
+#   - ScrollPageUp
+#   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
+#   - ScrollToTop
+#   - ScrollToBottom
+#   - ClearHistory
+#   - Hide
+#   - Minimize
+#   - Quit
+#   - ToggleFullscreen
+#   - SpawnNewInstance
+#   - ClearLogNotice
+#   - ReceiveChar
+#   - None

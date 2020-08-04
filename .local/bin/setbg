@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xwallpaper --zoom $1
+notify-send "Background Updated" "Wallpaper set to $1" --icon=$1
