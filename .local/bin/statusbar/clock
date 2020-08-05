@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf '%s %s%s \n' "$(date '+%b %d')" "$(date '+%I:%M%p')"

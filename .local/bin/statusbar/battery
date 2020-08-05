@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	3) notify-send "🔋 Battery module" "🔋: discharging
+        🛑: not charging
+        ♻: stagnant charge
+        🔌: charging
+        ⚡: charged
+        ❗: battery very low!" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+capacity="$(cat /sys/class/power_supply/BAT0/capacity)% "
+status=$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
+
+printf %s%s%% "$status " "$capacity"
