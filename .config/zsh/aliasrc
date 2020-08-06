@@ -11,6 +11,7 @@ alias \
     mkd="mkdir -pv" \
     yt="youtube-dl --add-metadata -i" \
     vg="vagrant"
+    sxiv="sxiv -a"
 
 # Colorize commands when possible.
 alias \
