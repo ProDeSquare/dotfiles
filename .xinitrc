@@ -26,14 +26,14 @@ fi
 # start some nice programs
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 numlockx &
-xwallpaper --zoom ~/Pictures/wallpapers/0002.jpg &
+xwallpaper --zoom $(tail ~/Pictures/bg -n 1) &
 picom --experimental-backends &
 dunst &
 dwmblocks &
