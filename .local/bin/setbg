@@ -1,4 +1,15 @@
 #!/bin/bash
 
-xwallpaper --zoom $1
-notify-send "Background Updated" "Wallpaper set to $1" --icon=$1
+WALLPAPER_INFORMATION_FILE=~/Pictures/bg
+WALLPAPER_TO_SET=$1
+
+if [[ ! -f $WALLPAPER_TO_SET ]]; then
+    notify-send "Error" "Not a proper file"
+    exit
+fi
+
+[ -f $WALLPAPER_INFORMATION_FILE ] || touch $WALLPAPER_INFORMATION_FILE
+[ -f $WALLPAPER_TO_SET ] && echo $WALLPAPER_TO_SET >> ~/Pictures/bg
+
+xwallpaper --zoom $WALLPAPER_TO_SET
+notify-send "Background Updated" "Wallpaper set to $WALLPAPER_TO_SET" --icon=$WALLPAPER_TO_SET
