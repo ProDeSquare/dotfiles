@@ -139,9 +139,6 @@ colors:
 # background_opacity: 1
 background_opacity: 0.75
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
-
 # cursor styles
 cursor:
   # Cursor style
