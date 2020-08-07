@@ -8,5 +8,5 @@ then
     notify-send "Picom" "Picom killed!"
 else
     notify-send "Picom" "Picom started!"
-    picom --experimental-backends &
+    picom --experimental-backends
 fi
