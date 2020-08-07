@@ -36,5 +36,6 @@ numlockx &
 xwallpaper --zoom $(tail ~/Pictures/bg -n 1) &
 picom --experimental-backends &
 dunst &
+unclutter &
 dwmblocks &
 exec dwm
