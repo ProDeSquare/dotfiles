@@ -4,7 +4,8 @@
 
 wm="$(wmctrl -m | grep Name: | cut -d ' ' -f2)"
 kernel="$(uname -r | cut -d - -f 1)"
-distro="$(cat /etc/*-release | grep PRETTY_NAME | cut -d '=' -f2 | tr -d '"')"
+# distro="$(cat /etc/*-release | grep PRETTY_NAME | cut -d '=' -f2 | tr -d '"')"
+distro="$(cat /usr/lib/*-release | grep PRETTY_NAME | cut -d '=' -f2 | tr -d '"')"
 packages="$(pacman -Qq | wc -l)"
 
 IFS=. read -r s _ < /proc/uptime
