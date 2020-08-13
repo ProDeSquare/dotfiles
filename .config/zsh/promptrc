@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # PROMPT="%{$fg[yellow]%}%n %{$reset_color%}at %{$fg[magenta]%}%M %{$reset_color%}in %{$fg[green]%}%1~ "$'\n'"%{$reset_color%}» "
 # RPROMPT="%{$fg[blue]%}[%{$fg[red]%}%*%{$fg[blue]%}]%{$reset_color%}"
 
