@@ -74,10 +74,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#928374,bg=#282828,underline"
 setopt autocd
 
 # Loading the alias file
-[ -f $HOME/.config/zsh/aliasrc ] && source ~/.config/zsh/aliasrc
+[ -f $HOME/.config/shell/aliasrc ] && source ~/.config/shell/aliasrc
 
 # Loading the path file
-[ -f $HOME/.config/zsh/pathrc ] && source ~/.config/zsh/pathrc
+[ -f $HOME/.config/shell/pathrc ] && source ~/.config/shell/pathrc
 
 # Running pfetch at start of zsh
 echo '\n' && sysinfo && echo '\n'
