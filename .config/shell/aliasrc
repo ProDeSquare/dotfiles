@@ -15,10 +15,11 @@ alias \
 
 # Colorize commands when possible.
 alias \
-	ls="ls -hN --color=auto --group-directories-first" \
+	ls="exa --color=always --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
+	# ls="ls -hN --color=auto --group-directories-first" \
 
 # commands too long
 alias \
