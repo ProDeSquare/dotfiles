@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Script to change my wallpapers
+
+path=${path:-~/Pictures/wallpapers}
+interval=${interval:-120}
+
+source parsevars
+
+# images=$(find $path -maxdepth 1 -type f)
+images=$(find $path -maxdepth 1 -type f \( -name "*.png" -or -name "*.jpg" -or -name "*.jpeg" \))
+
+while :
+do
+    for image in $images
+    do
+        xwallpaper --zoom $image
+        sleep $interval
+    done
+done
