@@ -1,4 +1,5 @@
 # Default programs:
+export FILE="ranger"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="brave"
