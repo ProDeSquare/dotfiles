@@ -41,7 +41,7 @@ set $right              l
 set $gaps_inner         10
 set $gaps_outer         0
 
-set $bar                i3status
+set $bar                i3blocks
 set $bar_position       top
 # custom variables end
 
@@ -179,19 +179,21 @@ bindsym $mod+r mode "resize"
 
 # i3bars configuration (commented by default)
 # if you want to use i3bar instead of polybar uncomment this below
-bar { status_command  $bar
+bar {
+        status_command  $bar
         position        $bar_position
-        font		pango:Jetbrains Mono 11
+        font		    pango:SF UI Display, Font Awesome, Jetbrains Mono Nerd Fonts
 
         colors {
-            background #3c3836
-            statusline #ebdbb2
-            separator  #666666
+                background #1D2433
+                statusline #d7dce2
+                separator  #2F3B54
 
-            focused_workspace  #33415E #33415E #ebdbb2
-            active_workspace   #83a598 #83a598 #ebdbb2
-            inactive_workspace #504945 #504945 #ebdbb2
-            urgent_workspace   #cc241d #cc241d #504945
+                focused_workspace  #5CCFE6 #5CCFE6 #1D2433
+                active_workspace   #171C28 #171C28 #FFFFFE
+                inactive_workspace #171C28 #171C28 #888888
+                urgent_workspace   #1D2433 #EF6B73 #FFFFFE
+                binding_mode       #1d2433 #EF6B73 #D7DCE2
         }
 }
 
@@ -204,7 +206,6 @@ gaps outer $gaps_outer
 # custom keybindings start
 bindsym $mod+b		exec $browser
 bindsym $mod+f		exec $term -e $file_manager
-#bindsym $mod+z		exec zoom # used for online meetings
 bindsym $mod+g		gaps inner current plus 5
 bindsym $mod+Shift+g	gaps inner current minus 5
 bindsym $mod+Shift+t	gaps inner current set $gaps_inner; gaps outer current set $gaps_outer
