@@ -179,23 +179,23 @@ bindsym $mod+r mode "resize"
 
 # i3bars configuration (commented by default)
 # if you want to use i3bar instead of polybar uncomment this below
-bar {
-        status_command  $bar
-        position        $bar_position
-        font		    pango:SF UI Display, Font Awesome, Jetbrains Mono Nerd Fonts
+# bar {
+#         status_command  $bar
+#         position        $bar_position
+#         font		    pango:SF UI Display, Font Awesome, Jetbrains Mono Nerd Fonts
 
-        colors {
-                background #1D2433
-                statusline #d7dce2
-                separator  #2F3B54
+#         colors {
+#                 background #1D2433
+#                 statusline #d7dce2
+#                 separator  #2F3B54
 
-                focused_workspace  #5CCFE6 #5CCFE6 #1D2433
-                active_workspace   #171C28 #171C28 #FFFFFE
-                inactive_workspace #171C28 #171C28 #888888
-                urgent_workspace   #1D2433 #EF6B73 #FFFFFE
-                binding_mode       #1d2433 #EF6B73 #D7DCE2
-        }
-}
+#                 focused_workspace  #5CCFE6 #5CCFE6 #1D2433
+#                 active_workspace   #171C28 #171C28 #FFFFFE
+#                 inactive_workspace #171C28 #171C28 #888888
+#                 urgent_workspace   #1D2433 #EF6B73 #FFFFFE
+#                 binding_mode       #1d2433 #EF6B73 #D7DCE2
+#         }
+# }
 
 # enabling gaps start
 for_window [class="^.*"] border pixel 2
@@ -212,4 +212,6 @@ bindsym $mod+Shift+t	gaps inner current set $gaps_inner; gaps outer current set 
 bindsym $mod+o		gaps inner current set 0; gaps outer current set 0
 
 bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+
+exec_always killall polybar && polybar example &
 # custom keybindings end
