@@ -4,6 +4,8 @@ bspc rule -r "*"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+xsetroot -cursor_name left_ptr &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config automatic_scheme alternate
