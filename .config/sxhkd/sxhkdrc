@@ -10,6 +10,12 @@ super + f
 super + b
 	$BROWSER
 
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
 # Reload hotkeys
 super + Escape
 	pkill -USR1 -x sxhkd
