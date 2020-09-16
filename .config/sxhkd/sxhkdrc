@@ -10,6 +10,10 @@ super + f
 super + b
 	$BROWSER
 
+Print
+	screenshot
+
+
 XF86MonBrightnessDown
 	xbacklight -dec 5
 
