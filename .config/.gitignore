@@ -3,6 +3,7 @@ chromium
 coc
 Code
 configstore
+composer
 dconf
 gconf
 gtk-3.0
