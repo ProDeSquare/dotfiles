@@ -16,6 +16,21 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 5
 
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
+
+XF86Audio{Raise,Lower}Volume
+    pactl set-sink-volume 0 {+,-}5%
+    
+XF86Audio{Next,Prev}
+	mpc {next,prev}
+
+XF86Audio{Pause,Play,Stop}
+	mpc {pause,play,stop}
+
+XF86Audio{Rewind,Forward}
+	mpc seek {-,+}10
+
 # Reload hotkeys
 super + Escape
 	pkill -USR1 -x sxhkd
