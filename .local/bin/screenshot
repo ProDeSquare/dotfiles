@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Script to capture screenshots
+
+SCRDIR="$HOME/Pictures/screenshots/"
+
+[ -d "$SCRDIR" ] || mkdir -p $SCRDIR
+
+if [ -x "$(command -v maim)" ]
+then
+    SCR="$SCRDIR/screenshot_full-$(date '+%y%m%d_%H%M%S').png"
+    maim $SCR
+    notify-send "Maim" "Screenshot saved" --icon=$SCR
+# elif [ -x "$(command -v scrot)" ]
+# then
+#     scrot -e 'mv $f "$SCRDIR" && notify-send "Scrot" "Screenshot saved"'
+fi
