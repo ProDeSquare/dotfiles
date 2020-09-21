@@ -15,10 +15,10 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 # Checking for histfile in the home dir (create if doesn't exists)
-[ -f $HOME/.histfile ] || touch ~/.histfile
+[ -f $HISTFILE ] || touch $HISTFILE
 
 # Specifying the histfile, history should be saved here
-HISTFILE=~/.local/share/histfile
+HISTFILE=$HISTFILE
 HISTSIZE=10000
 SAVEHIST=10000
 
