@@ -288,7 +288,7 @@ label-volume =    %percentage%%
 label-volume-foreground = ${root.foreground}
 label-volume-underline = ${colors.primary}
 
-label-muted = 婢  Muted
+label-muted = Muted
 label-muted-underline = ${colors.alert}
 
 ; bar-volume-width = 10
