@@ -3,12 +3,9 @@
 !.config/**
 !.local
 !.local/**
-!.zshrc
+!.zshenv
 !.gitignore
 !.bash_profile
 !.bashrc
 !README.md
-!.xinitrc
 !.Xresources
-!.zprofile
-!.zshrc
