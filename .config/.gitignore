@@ -1,3 +1,4 @@
+GIMP
 BraveSoftware
 chromium
 coc
@@ -7,6 +8,9 @@ composer
 dconf
 gconf
 gtk-3.0
+gtk-2.0
+obs-studio
+procps
 nautilus
 nvim
 pulse
