@@ -18,7 +18,7 @@ bindkey '\e[B' history-search-forward
 [ -f $HOME/.histfile ] || touch ~/.histfile
 
 # Specifying the histfile, history should be saved here
-HISTFILE=~/.histfile
+HISTFILE=~/.local/share/histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -79,4 +79,5 @@ setopt autocd
 # Loading the path file
 [ -f $HOME/.config/shell/pathrc ] && source ~/.config/shell/pathrc
 
-/opt/shell-color-scripts/colorscript.sh random
+# Sysinfo
+echo '\n' && sysinfo && echo '\n'
