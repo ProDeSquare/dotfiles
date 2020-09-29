@@ -18,6 +18,7 @@
 
 [colors]
 background = #24252a
+; background = #00000000
 background-alt = ${xrdb:color0}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color7}
@@ -28,12 +29,12 @@ alert = ${xrdb:color1}
 
 [bar/default]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 80%
 height = 32
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
-fixed-center = false
+offset-x = 10%
+offset-y = 10
+radius = 5
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,8 +45,8 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 4
+padding-right = 4
 
 module-margin-left = 1
 module-margin-right = 2
@@ -55,13 +56,14 @@ font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-2 = siji:pixelsize=12;1
 font-3 = HackNerdFont:pixelsize=12;1
 
-modules-left = bspwm xwindow
-modules-center = 
-modules-right = filesystem pulseaudio mpd memory cpu wlan battery temperature date powermenu
+modules-left = bspwm
+modules-center = xwindow
+; modules-right = filesystem pulseaudio mpd memory cpu wlan battery temperature date powermenu
+modules-right = filesystem pulseaudio wlan battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
-;tray-background = #0063ff
+; tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -93,8 +95,8 @@ format-foreground = ${colors.tertiary}
 ; label-layout = %layout%
 ; label-layout-underline = ${colors.secondary}
 
-; label-indicator-padding = 2
-; label-indicator-margin = 1
+; label-indicator-padding = 6
+; label-indicator-margin = 0
 ; label-indicator-background = ${colors.secondary}
 ; label-indicator-underline = ${colors.secondary}
 
