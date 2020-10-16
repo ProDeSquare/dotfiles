@@ -3,10 +3,11 @@
 bspc rule -r "*"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x polybar > /dev/null || polybar default 2>/dev/null &
 
 xsetroot -cursor_name left_ptr &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V VI VII VIII IX
 
 bspc config automatic_scheme alternate
 bspc config initial_polarity second_child
