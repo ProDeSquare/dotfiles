@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_INFORMATION_FILE=~/Pictures/bg
+WALLPAPER_INFORMATION_FILE=~/.local/share/bg
 WALLPAPER_TO_SET=$(realpath $1)
 
 if [[ ! -f $WALLPAPER_TO_SET ]]; then
@@ -9,7 +9,7 @@ if [[ ! -f $WALLPAPER_TO_SET ]]; then
 fi
 
 [ -f $WALLPAPER_INFORMATION_FILE ] || touch $WALLPAPER_INFORMATION_FILE
-[ -f $WALLPAPER_TO_SET ] && echo $WALLPAPER_TO_SET >> ~/Pictures/bg
+[ -f $WALLPAPER_TO_SET ] && echo $WALLPAPER_TO_SET >> $WALLPAPER_INFORMATION_FILE
 
 xwallpaper --zoom $WALLPAPER_TO_SET
 notify-send "Background Updated" "Wallpaper set to $(basename $WALLPAPER_TO_SET)" --icon=$WALLPAPER_TO_SET
