@@ -7,4 +7,14 @@
 
 # PROMPT="%{$fg[yellow]%} %{$fg[magenta]%}ﰲ %{$fg[white]%}%1~"$'\n'"%{$fg[blue]%}%{$reset_color%} "
 
-PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$reset_color%}🐧 "
+# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$reset_color%}🐧 "
+
+# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$fg[blue]%}%{$reset_color%}  "
+
+# PROMPT="%B%{$fg[blue]%}%~%{$reset_color%} %{$fg[green]%}%{$reset_color%}%b  "
+
+# PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+
+# PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) '
+
+PROMPT='%B%{$fg[green]%}(%n) %(?:◆ :%{$fg[red]%}✖%{$fg[green]%} %U$?%u )%~ %(?:%{$fg[magenta]%}❯%{$fg[green]%}:❯)❯❯ %{$reset_color%}%b'
