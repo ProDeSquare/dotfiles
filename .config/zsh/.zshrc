@@ -1,7 +1,16 @@
 # Hamza Mughal's config of zsh
 
-# Customizing the way propmt looks
+# loading colors
 autoload -U colors && colors
+
+# VCS info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git:*' formats "%{$fg[magenta]%}git:(%{$fg[green]%}%b%{$fg[magenta]%}) "
+
+# sourcing the prompt file
 source ~/.config/zsh/promptrc
 
 # Autocompletion
@@ -80,4 +89,5 @@ setopt autocd
 [ -f $HOME/.config/shell/pathrc ] && source ~/.config/shell/pathrc
 
 # Sysinfo
-echo '\n' && sysinfo && echo '\n'
+# echo '\n' && sysinfo && echo '\n'
+/opt/shell-color-scripts/colorscript.sh random
