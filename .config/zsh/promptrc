@@ -17,4 +17,4 @@
 
 # PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) '
 
-PROMPT='%B%{$fg[green]%}(%n) %(?:◆ :%{$fg[red]%}✖%{$fg[green]%} $? )%~ ${vcs_info_msg_0_}%(?:%{$fg[magenta]%}❯%{$fg[green]%}:❯)❯❯ %{$reset_color%}%b'
+PROMPT='%B%{$fg[green]%}(%n) %(?:◆ :%{$fg[red]%}✖%{$fg[green]%} $? )%~ ${vcs_info_msg_0_}%{$fg[green]%}%(?:%{$fg[magenta]%}❯%{$fg[green]%}:❯)❯❯ %{$reset_color%}%b'

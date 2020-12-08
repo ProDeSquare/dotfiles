@@ -8,7 +8,7 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git:*' formats "%{$fg[magenta]%}git:(%{$fg[green]%}%b%{$fg[magenta]%}) "
+zstyle ':vcs_info:git:*' formats "%{$fg[magenta]%}%s:(%{$fg[green]%}%b%{$fg[magenta]%})%{$reset_color%} "
 
 # sourcing the prompt file
 source ~/.config/zsh/promptrc
@@ -90,4 +90,5 @@ setopt autocd
 
 # Sysinfo
 # echo '\n' && sysinfo && echo '\n'
-/opt/shell-color-scripts/colorscript.sh random
+# /opt/shell-color-scripts/colorscript.sh random
+echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
