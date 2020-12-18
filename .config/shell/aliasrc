@@ -10,16 +10,15 @@ alias \
     rm="rm -Iv" \
     mkd="mkdir -pv" \
     yt="youtube-dl --add-metadata -i" \
-    vg="vagrant"
+    vg="vagrant" \
     sxiv="sxiv -a"
 
 # Colorize commands when possible.
 alias \
-	ls="exa --color=always --group-directories-first" \
+	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
-	# ls="ls -hN --color=auto --group-directories-first" \
 
 # commands too long
 alias \
@@ -32,6 +31,8 @@ alias \
 	p="sudo pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
-	xq="xbps-query"
+	xq="xbps-query" \
+	ru="sudo rc-update" \
+	rs="sudo rc-service"
 
 eval $(thefuck --alias)
