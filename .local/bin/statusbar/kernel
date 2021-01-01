@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Script that outputs current linux kernel
+
+printf '%s%s \n' "$(uname -r | cut -d - -f 1)"
