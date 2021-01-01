@@ -3,6 +3,7 @@ export FILE="ranger"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
+export IMAGE="sxiv"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
