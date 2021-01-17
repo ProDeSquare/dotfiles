@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+function cmkd {
+    mkdir -pv -- $1 && cd -P -- $1
+}

@@ -88,7 +88,9 @@ setopt autocd
 # Loading the path file
 [ -f $HOME/.config/shell/pathrc ] && source ~/.config/shell/pathrc
 
+# Loading the functions file
+[ -f $HOME/.config/zsh/functionsrc ] && source ~/.config/zsh/functionsrc
+
 # Sysinfo
-# echo '\n' && sysinfo && echo '\n'
-# /opt/shell-color-scripts/colorscript.sh random
+sysinfo
 echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
