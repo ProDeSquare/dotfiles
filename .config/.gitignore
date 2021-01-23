@@ -12,7 +12,7 @@ gtk-2.0
 obs-studio
 procps
 nautilus
-nvim
+nvim/autoload/*
 pulse
 thefuck
 VirtualBox
