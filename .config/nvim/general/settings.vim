@@ -29,6 +29,9 @@ set background=dark
 " Space for messages
 set cmdheight=2
 
+" leader
+let mapleader=" "
+
 " remove trailing white spaces
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
