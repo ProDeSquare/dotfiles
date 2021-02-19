@@ -1,20 +1,20 @@
 #!/usr/bin/zsh
 
-# PROMPT="%{$fg[yellow]%}%n %{$reset_color%}at %{$fg[magenta]%}%M %{$reset_color%}in %{$fg[green]%}%1~ "$'\n'"%{$reset_color%}» "
-# RPROMPT="%{$fg[blue]%}[%{$fg[red]%}%*%{$fg[blue]%}]%{$reset_color%}"
+function set-prompt () {
+    case ${KEYMAP} in
+        (vicmd)      VI_MODE="%{$fg[red]%}(N)" ;;
+        (main|viins) VI_MODE="%{$fg[green]%}(I)" ;;
+        (*)          VI_MODE="%{$fg[green]%}(I)" ;;
+    esac
 
-# PROMPT="[%{$fg[white]%}%1~%{$reset_color%}]$ "
+    # fish-shell's shashimi like prompt
+    PROMPT='%B$VI_MODE %{$fg[green]%}%(?:◆ :%{$fg[red]%}✖%{$fg[green]%} $? )%~ ${vcs_info_msg_0_}%{$fg[green]%}%(?:%{$fg[magenta]%}❯%{$fg[green]%}:❯)❯❯%{$reset_color%}%b '
+}
 
-# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%}ﰲ %{$fg[white]%}%1~"$'\n'"%{$fg[blue]%}%{$reset_color%} "
+function zle-line-init zle-keymap-select {
+    set-prompt
+    zle reset-prompt
+}
 
-# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$reset_color%}🐧 "
-
-# PROMPT="%{$fg[yellow]%} %{$fg[magenta]%} %{$fg[white]%}%~"$'\n'"%{$fg[blue]%}%{$reset_color%}  "
-
-# PROMPT="%B%{$fg[blue]%}%~%{$reset_color%} %{$fg[green]%}%{$reset_color%}%b  "
-
-# PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-
-# PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) '
-
-PROMPT='%B%{$fg[green]%}(%n) %(?:◆ :%{$fg[red]%}✖%{$fg[green]%} $? )%~ ${vcs_info_msg_0_}%{$fg[green]%}%(?:%{$fg[magenta]%}❯%{$fg[green]%}:❯)❯❯ %{$reset_color%}%b'
+zle -N zle-line-init
+zle -N zle-keymap-select
