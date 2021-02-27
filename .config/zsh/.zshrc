@@ -3,13 +3,6 @@
 # loading colors
 autoload -U colors && colors
 
-# VCS info
-autoload -Uz vcs_info
-precmd() { vcs_info }
-setopt prompt_subst
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git:*' formats "%{$fg[magenta]%}%s:(%{$fg[green]%}%b%{$fg[magenta]%})%{$reset_color%} "
-
 # sourcing the prompt file
 source ~/.config/zsh/promptrc
 
@@ -37,21 +30,11 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
-# Exports
-export BROWSER="brave"
-export EDITOR="nvim"
-
-# Basic alias configs
-alias ls='ls --color=auto'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
-
 # Completion setup
 zmodload zsh/complist
 autoload -Uz compinit
 compinit
-zstyle :compinstall filename '${HOME}/.zshrc'
+zstyle :compinstall filename '.config/zsh/.zshrc'
 
 # Completion for pacman (press tab to list package names)
 zstyle ':completion:*:pacman:*' force-list always
@@ -91,6 +74,4 @@ setopt autocd
 # Loading the functions file
 [ -f $HOME/.config/zsh/functionsrc ] && source ~/.config/zsh/functionsrc
 
-# Sysinfo
-sysinfo
 echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
