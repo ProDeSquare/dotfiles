@@ -2,10 +2,15 @@
 
 # xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1 &
 
-xrdb -merge "$HOME/.config/X11/.Xresources"
+xrdb -merge "$HOME/.config/X11/.Xresources"          # merging Xresources
 
 numlockx &                                           # enable numlock on startup
-xwallpaper --zoom $(tail ~/.local/share/bg -n 1) &   # setting background
-picom --experimental-backends &                      # starting compositor
+dunst &                                              # notifications
+sxhkd &                                              # shortcut manager
 unclutter &                                          # disable mouse cursor when startionary
-exec bspwm
+picom -GCb &                                         # starting compositor
+xwallpaper --zoom $(tail ~/.local/share/bg -n 1) &   # setting background
+
+dwmblocks &                                          # starting blocks
+
+exec dwm                                             # window manager
