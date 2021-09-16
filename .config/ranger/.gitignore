@@ -1,1 +1,4 @@
-__pycache__
+*
+!rc.conf
+!rifle.conf
+!scope.sh
