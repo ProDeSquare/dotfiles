@@ -21,8 +21,8 @@ bindkey '\e[B' history-search-forward
 
 # Specifying the histfile, history should be saved here
 HISTFILE=$HISTFILE
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=999999999
+SAVEHIST=999999999
 
 # Customizing the way history behaves
 setopt APPEND_HISTORY
@@ -60,7 +60,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 
 # Fish like command completion
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#928374,bg=#282828,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7b7b7b,underline"
 
 # Auto cd (i don't use this one too most of the time)
 setopt autocd
