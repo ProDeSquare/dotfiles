@@ -29,6 +29,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'drewtempelmeyer/palenight.vim'
+
+Plug 'ap/vim-css-color'
 call plug#end()
 
 autocmd VimEnter *
