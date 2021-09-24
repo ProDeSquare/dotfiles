@@ -22,6 +22,10 @@ super + shift + x
 super + slash
     dmenu_run -l 10 -g 8
 
+# screenlock
+super + x
+    slock
+
 # screenshot
 Print
     screenshot
