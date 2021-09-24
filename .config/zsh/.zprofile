@@ -1,5 +1,5 @@
 # Default programs:
-export FILE="ranger"
+export FILE="lfrun"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
