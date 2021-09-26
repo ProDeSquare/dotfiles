@@ -30,6 +30,10 @@ super + x
 Print
     screenshot
 
+# start/kill compositor
+super + c
+    compositor
+
 # controls (brightness)
 XF86MonBrightnessUp
     xbacklight -inc 5 && pkill -RTMIN+11 dwmblocks
@@ -43,3 +47,7 @@ XF86AudioMute
 
 XF86Audio{Raise,Lower}Volume
     pactl set-sink-volume 0 {+,-}5% && pkill -RTMIN+10 dwmblocks
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd; notify-send "sxhkd" "Configuration Reloaded!"
