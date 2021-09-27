@@ -3,3 +3,4 @@
 # Script that outputs current linux kernel
 
 printf '%s%s \n' "$(uname -r | cut -d - -f 1)"
+# printf '%s%s \n' "$(uname -r)"
