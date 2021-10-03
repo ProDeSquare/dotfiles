@@ -10,7 +10,6 @@ source ~/.config/zsh/promptrc
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
-setopt COMPLETE_ALIASES
 
 # History search
 bindkey '\e[A' history-search-backward
@@ -25,30 +24,9 @@ HISTSIZE=999999999
 SAVEHIST=999999999
 
 # Customizing the way history behaves
-setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-
-# Completion setup
-zmodload zsh/complist
-autoload -Uz compinit
-compinit
-zstyle :compinstall filename '.config/zsh/.zshrc'
-
-# Completion for pacman (press tab to list package names)
-zstyle ':completion:*:pacman:*' force-list always
-zstyle ':completion:*:*:pacman:*' menu yes select
-
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-# Completion for kill command
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
-
-# Completion of killall command
-zstyle ':completion:*:*:killall:*' menu yes select
-zstyle ':completion:*:killall:*'   force-list always
 
 # Edit command in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -74,4 +52,4 @@ setopt autocd
 # Loading the functions file
 [ -f $HOME/.config/zsh/functionsrc ] && source ~/.config/zsh/functionsrc
 
-echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
+# echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
