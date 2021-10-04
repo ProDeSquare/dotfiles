@@ -2,7 +2,7 @@
 #
 # Script to capture screenshots
 
-SCRDIR="$HOME/Pictures/screenshots/"
+SCRDIR="$HOME/docx/pictures/screenshots/"
 
 [ -d "$SCRDIR" ] || mkdir -p $SCRDIR
 

@@ -2,13 +2,13 @@
 #
 # Script to change my wallpapers
 
-path=${path:-~/Pictures/wallpapers}
+path=${path:-~/docx/pictures/wallpapers}
 interval=${interval:-120}
 
 source parsevars
 
 # images=$(find $path -maxdepth 1 -type f)
-images=$(find $path -maxdepth 1 -type f \( -name "*.png" -or -name "*.jpg" -or -name "*.jpeg" \))
+images=$(find $path -maxdepth 1 -type f \( -name "*.png" -or -name "*.jpg" -or -name "*.jpeg" \) | shuf)
 
 while :
 do
