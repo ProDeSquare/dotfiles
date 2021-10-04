@@ -7,6 +7,7 @@ set icons true
 set sortby time
 set reverse true
 set ignorecase true
+set mouse true
 
 # Custom Functions
 cmd open ${{
@@ -40,6 +41,10 @@ cmd unarchive ${{
   esac
 }}
 
+# wallpaper
+cmd setwallpaper %setbg "$f"
+
+# archive
 cmd zip %zip -r "$f" "$f"
 cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
@@ -90,3 +95,9 @@ map <enter> open
 map mf makefile
 map md mkdir
 map r rename
+map bg setwallpaper
+
+# mouse
+map <m-2> updir
+map <m-up> up
+map <m-down> down
