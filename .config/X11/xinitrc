@@ -1,16 +1,17 @@
 #!/bin/sh
+#
+# file runs with startx
 
-# xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1 &
+xrdb -merge "$XDG_CONFIG_HOME/x11/xresources" &     # merging xresources
 
-xrdb -merge "$HOME/.config/X11/.Xresources"          # merging Xresources
+# starting some basic programs
+numlockx &                                          # enable numlock at startup
+dunst &                                             # notifications
+unclutter &                                         # removing mouse cursor when stationary
+sxhkd &                                             # hotkey daemon
+dwmblocks &                                         # statusbar blocks
+picom -GCb &                                        # compositor
 
-numlockx &                                           # enable numlock on startup
-dunst &                                              # notifications
-sxhkd &                                              # shortcut manager
-unclutter &                                          # disable mouse cursor when startionary
-picom -GCb &                                         # starting compositor
-xwallpaper --zoom $(tail ~/.local/share/bg -n 1) &   # setting background
+xwallpaper --zoom $(tail ~/.local/share/bg -n 1) &  # setting background
 
-dwmblocks &                                          # starting blocks
-
-exec dwm                                             # window manager
+exec dwm                                            # window manager
