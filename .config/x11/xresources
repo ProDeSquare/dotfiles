@@ -1,0 +1,25 @@
+!! Transparency (0-1):
+*.alpha: 0.9
+
+!! Set a default font and font size as below:
+*.font: Jetbrains Mono Medium:size=10
+
+!! default:
+*.background: #282c34
+*.foreground: #a2aabc
+*.color0: #171c28
+*.color1: #ef6b73
+*.color2: #bae67e
+*.color3: #ffd580
+*.color4: #5ccfe6
+*.color5: #c3a6ff
+*.color6: #5ccfe6
+*.color7: #d7dce2
+*.color8: #8695b7
+*.color9: #f07178
+*.color10: #bae67e
+*.color11: #ffd580
+*.color12: #5ccfe6
+*.color13: #c3a6ff
+*.color14: #5ccfe6
+*.color15: #d7dce2
