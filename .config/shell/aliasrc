@@ -35,4 +35,4 @@ alias \
 	ru="sudo rc-update" \
 	rs="sudo rc-service"
 
-[ -x thefuck ] && eval $(thefuck --alias)
+command -v thefuck >/dev/null && eval $(thefuck --alias)
