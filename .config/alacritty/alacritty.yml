@@ -12,8 +12,8 @@ window:
 
   # specifying padding on both x & y axis
   padding:
-    x: 10
-    y: 10
+    x: 8
+    y: 12
 
   # Add padding automatically where needed
   dynamic_padding: true
@@ -43,7 +43,7 @@ font:
     family: Jetbrains Mono Nerd Font
 
   # font-size, given in points
-  size: 8.8
+  size: 8.0
 
 # Colors (One Dark)
 colors:
@@ -74,155 +74,9 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0xffffff'
 
-# Colors (Flat Remix)
-# colors:
-#   primary:
-#     background: '0x272a34'
-#     foreground: '0xFFFFFF'
-
-#   normal:
-#     black:   '0x1F2229'
-#     red:     '0xEC0101'
-#     green:   '0x47D4B9'
-#     yellow:  '0xFF8A18'
-#     blue:    '0x277FFF'
-#     magenta: '0xD71655'
-#     cyan:    '0x05A1F7'
-#     white:   '0xFFFFFF'
-
-
-#   bright:
-#     black:   '0x1F2229'
-#     red:     '0xD41919'
-#     green:   '0x5EBDAB'
-#     yellow:  '0xFEA44C'
-#     blue:    '0x367bf0'
-#     magenta: '0xBF2E5D'
-#     cyan:    '0x49AEE6'
-#     white:   '0xFFFFFF'
-
-# Colors (Dracula)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x282a36'
-#     foreground: '0xf8f8f2'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x000000'
-#     red:     '0xff5555'
-#     green:   '0x50fa7b'
-#     yellow:  '0xf1fa8c'
-#     blue:    '0xcaa9fa'
-#     magenta: '0xff79c6'
-#     cyan:    '0x8be9fd'
-#     white:   '0xbfbfbf'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x282a35'
-#     red:     '0xff6e67'
-#     green:   '0x5af78e'
-#     yellow:  '0xf4f99d'
-#     blue:    '0xcaa9fa'
-#     magenta: '0xff92d0'
-#     cyan:    '0x9aedfe'
-#     white:   '0xe6e6e6'
-
-# Colors (Halcyon)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x1d2433'
-#     foreground: '0xa2aabc'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x171c28'
-#     red:     '0xef6b73'
-#     green:   '0xbae67e'
-#     yellow:  '0xffd580'
-#     blue:    '0x5ccfe6'
-#     magenta: '0xc3a6ff'
-#     cyan:    '0x5ccfe6'
-#     white:   '0xd7dce2'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x8695b7'
-#     red:     '0xf07178'
-#     green:   '0xbae67e'
-#     yellow:  '0xffd580'
-#     blue:    '0x5ccfe6'
-#     magenta: '0xc3a6ff'
-#     cyan:    '0x5ccfe6'
-#     white:   '0xd7dce2'
-
-# Colors (Ayu Mirage)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#202734'
-#     foreground: '#CBCCC6'
-
-#   # Normal colors
-#   normal:
-#     black: '#191E2A'
-#     red: '#FF3333'
-#     green: '#BAE67E'
-#     yellow: '#FFA759'
-#     blue: '#73D0FF'
-#     magenta: '#FFD580'
-#     cyan: '#95E6CB'
-#     white: '#C7C7C7'
-
-#   # Bright colors
-#   bright:
-#     black: '#686868'
-#     red: '#F27983'
-#     green: '#A6CC70'
-#     yellow: '#FFCC66'
-#     blue: '#5CCFE6'
-#     magenta: '#FFEE99'
-#     cyan: '#95E6CB'
-#     white: '#FFFFFF'
-
-# Colors (Gruvbox dark)
-# colors:
-#   # Default colors
-#   primary:
-#     # hard contrast: background = '#1d2021'
-#     background: '#282828'
-#     # soft contrast: background = '#32302f'
-#     foreground: '#ebdbb2'
-
-#   # Normal colors
-#   normal:
-#     black:   '#282828'
-#     red:     '#cc241d'
-#     green:   '#98971a'
-#     yellow:  '#d79921'
-#     blue:    '#458588'
-#     magenta: '#b16286'
-#     cyan:    '#689d6a'
-#     white:   '#a89984'
-
-#   # Bright colors
-#   bright:
-#     black:   '#928374'
-#     red:     '#fb4934'
-#     green:   '#b8bb26'
-#     yellow:  '#fabd2f'
-#     blue:    '#83a598'
-#     magenta: '#d3869b'
-#     cyan:    '#8ec07c'
-#     white:   '#ebdbb2'
-
   indexed_colors: []
 
-# background_opacity: 1
-background_opacity: 1
+background_opacity: 0.9
 
 # cursor styles
 cursor:
@@ -230,7 +84,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Block
 
   # cursor becomes hollow when window is unfocused
   unfocused_hollow: true
