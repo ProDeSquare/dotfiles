@@ -1,4 +1,3 @@
 #!/bin/sh
 
-# printf '%s %s%s \n' "$(date '+%b %d')" "$(date '+%I:%M%p')"
-printf '%s %s%s \n' "$(date '+%Y %b %d')," "$(date '+%H:%M')"
+printf '%s %s%s \n' "$(date '+%b %d')" "$(date '+%I:%M%p' | sed 's/0*//')"
