@@ -52,4 +52,7 @@ setopt autocd
 # Loading the functions file
 [ -f $HOME/.config/zsh/functionsrc ] && source ~/.config/zsh/functionsrc
 
+# to enable install the following and uncomment last line
+# lolcat (pacman -S lolcat)
+# spark (https://github.com/holman/spark)
 # echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat; echo; echo
