@@ -12,8 +12,10 @@ set mouse true
 # Custom Functions
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
+        text/*|application/json) $EDITOR "$f" ;;
+        image/x-xcf) gimp "$f" ;;
         image/*) sxiv -a "$f";;
+        application/pdf|application/vnd*|application/epub*) zathura "$f" ;;
         *) xdg-open "$f" ;;
     esac
 }}
