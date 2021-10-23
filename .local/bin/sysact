@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case "$(readlink -f /sbin/init)" in
+    *systemd*) ctl='systemctl' ;;
+    *) ctl='loginctl' ;;
+esac
+
+case "$(printf "Lock\nLeave DWM\nReboot\nShutdown" | dmenu -i -p 'Action: ')" in
+    'Lock') slock ;;
+    'Leave DWM') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
+    'Reboot') $ctl reboot ;;
+    'Shutdown') $ctl poweroff ;;
+    *) exit 1 ;;
+esac

@@ -17,7 +17,7 @@ super + ctrl + b
 
 # dmenu
 super + shift + x
-    prompt 'Do you really want to shutdown?' 'poweroff'
+    sysact
 
 super + slash
     dmenu_run -l 10 -g 8
