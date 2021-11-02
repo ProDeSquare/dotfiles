@@ -34,6 +34,16 @@ Print
 super + c
     compositor
 
+# notifications
+ctrl + space
+    dunstctl close
+
+ctrl + shift + space
+    dunstctl close-all
+
+ctrl + grave
+    dunstctl history-pop
+
 # controls (brightness)
 XF86MonBrightnessUp
     xbacklight -inc 5 && pkill -RTMIN+11 dwmblocks
