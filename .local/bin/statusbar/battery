@@ -1,17 +1,17 @@
 #!/bin/sh
 
-case $BLOCK_BUTTON in
-	3) notify-send "🔋 Battery module" "🔋: discharging
-        🛑: not charging
-        ♻: stagnant charge
-        🔌: charging
-        ⚡: charged
-        ❗: battery very low!" ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 
-capacity="$(cat /sys/class/power_supply/BAT0/capacity)% "
-# status=$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
-status=$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
+if [ $capacity -le 15 ]; then
+        icon=""
+elif [ $capacity -gt 15 -a $capacity -le 40 ]; then
+        icon=""
+elif [ $capacity -gt 40 -a $capacity -le 60 ]; then
+        icon=""
+else
+        icon=""
+fi
 
-printf %s%s%s%% "$status " "$capacity" "($(acpi | awk -F', ' '{print $3}')) "
+status=$(sed "s/[Dd]ischarging/$icon/;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
+
+printf %s%s%s%% "$status " "$capacity" "% "
