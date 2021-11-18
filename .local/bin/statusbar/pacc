@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf '%s%s \n' "$(pacman -Qq | wc -l)"

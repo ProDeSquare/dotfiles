@@ -12,6 +12,9 @@ else
         icon=""
 fi
 
+# status=$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
+# status=$(sed "s/[Dd]ischarging//;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
 status=$(sed "s/[Dd]ischarging/$icon/;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
 
 printf %s%s%s%% "$status " "$capacity" "% "
+# printf %s%s%s%s%% "$status " "$capacity" "% "  "($(acpi | awk -F', ' '{print $3}')) "

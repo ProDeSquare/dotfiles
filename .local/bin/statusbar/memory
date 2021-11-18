@@ -1,3 +1,4 @@
 #!/bin/bash
 
 free -h | awk '/^Mem/ { print $3" " }' | sed s/i//g
+# free | grep Mem | awk '{ printf("%d% \n", $3/$2 * 100.0) }'
