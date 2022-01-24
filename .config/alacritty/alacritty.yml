@@ -12,8 +12,8 @@ window:
 
   # specifying padding on both x & y axis
   padding:
-    x: 8
-    y: 12
+    x: 0
+    y: 0
 
   # Add padding automatically where needed
   dynamic_padding: true
@@ -24,6 +24,9 @@ window:
 
   # telling alacrity to use dark theme
   gtk_theme_variant: dark
+
+  # setting the window opacity
+  opacity: 0.85
 
 # font configuration
 font:
@@ -126,8 +129,6 @@ schemes:
 colors: *one_dark
 # colors: *gruvbox_dark
 # colors: *nord
-
-background_opacity: 0.95
 
 # cursor styles
 cursor:
