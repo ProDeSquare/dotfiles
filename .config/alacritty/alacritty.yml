@@ -12,8 +12,8 @@ window:
 
   # specifying padding on both x & y axis
   padding:
-    x: 0
-    y: 0
+    x: 10
+    y: 10
 
   # Add padding automatically where needed
   dynamic_padding: true
@@ -26,7 +26,7 @@ window:
   gtk_theme_variant: dark
 
   # setting the window opacity
-  opacity: 0.85
+  opacity: 0.95
 
 # font configuration
 font:
@@ -43,14 +43,14 @@ font:
     family: Jetbrains Mono Nerd Font
 
   # font-size, given in points
-  size: 7.9
+  size: 8
 
 schemes:
   # One dark color scheme
-  one_dark: &one_dark
+  hm: &hm
     primary:
-      background: '0x282c34'
-      foreground: '0xabb2bf'
+      background: '0x1c2023'
+      foreground: '0xc7ccd1'
 
     normal:
       black:   '0x1e2127'
@@ -72,63 +72,10 @@ schemes:
       cyan:    '0x56b6c2'
       white:   '0xffffff'
 
-  # Gruvbox dark color scheme
-  gruvbox_dark: &gruvbox_dark
-    primary:
-      background: '0x282828'
-      foreground: '0xebdbb2'
-
-    normal:
-      black:   '0x282828'
-      red:     '0xcc241d'
-      green:   '0x98971a'
-      yellow:  '0xd79921'
-      blue:    '0x458588'
-      magenta: '0xb16286'
-      cyan:    '0x689d6a'
-      white:   '0xa89984'
-
-    bright:
-      black:   '0x928374'
-      red:     '0xfb4934'
-      green:   '0xb8bb26'
-      yellow:  '0xfabd2f'
-      blue:    '0x83a598'
-      magenta: '0xd3869b'
-      cyan:    '0x8ec07c'
-      white:   '0xebdbb2'
-
-  # Nord Color Scheme
-  nord: &nord
-    primary:
-      background: '0x2E3440'
-      foreground: '0xD8DEE9'
-
-    normal:
-      black:   '0x3B4252'
-      red:     '0xBF616A'
-      green:   '0xA3BE8C'
-      yellow:  '0xEBCB8B'
-      blue:    '0x81A1C1'
-      magenta: '0xB48EAD'
-      cyan:    '0x88C0D0'
-      white:   '0xE5E9F0'
-
-    bright:
-      black:   '0x4C566A'
-      red:     '0xBF616A'
-      green:   '0xA3BE8C'
-      yellow:  '0xEBCB8B'
-      blue:    '0x81A1C1'
-      magenta: '0xB48EAD'
-      cyan:    '0x8FBCBB'
-      white:   '0xECEFF4'
 
     indexed_colors: []
 
-colors: *one_dark
-# colors: *gruvbox_dark
-# colors: *nord
+colors: *hm
 
 # cursor styles
 cursor:
