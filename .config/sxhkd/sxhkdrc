@@ -36,9 +36,6 @@ super + c
 
 # notifications
 ctrl + space
-    dunstctl close
-
-ctrl + shift + space
     dunstctl close-all
 
 ctrl + grave
