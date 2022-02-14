@@ -3,12 +3,12 @@
 WALLPAPER_INFORMATION_FILE=~/.local/share/bg
 WALLPAPER_TO_SET=$(realpath $1)
 
-if [[ ! -f $WALLPAPER_TO_SET ]]; then
-    notify-send "Error" "Not a proper file"
-    exit
-fi
+[ ! -f $WALLPAPER_TO_SET ] && notify-send "Error" "Not a proper file!" && exit
 
-[ -f $WALLPAPER_INFORMATION_FILE ] || touch $WALLPAPER_INFORMATION_FILE
+[ ! -f $WALLPAPER_INFORMATION_FILE ] \
+    && touch $WALLPAPER_INFORMATION_FILE \
+    && echo -e "--THIS IS AN AUTO GENERATED FILE--\n" > $WALLPAPER_INFORMATION_FILE
+
 [ -f $WALLPAPER_TO_SET ] && echo $WALLPAPER_TO_SET >> $WALLPAPER_INFORMATION_FILE
 
 xwallpaper --zoom $WALLPAPER_TO_SET
