@@ -34,6 +34,10 @@ keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<Tab>", ">>_", opts)
 keymap("n", "<S-Tab>", "<<_", opts)
 
+-- telescope
+keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
+
 -- Visual Mode --
 -- tabbing in visual mode
 keymap("v", "<Tab>", ">gv", opts)
@@ -43,3 +47,6 @@ keymap("v", "p", '"_dP', opts)
 -- move text up and down
 keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<S-k>", ":m '>-2<CR>gv=gv", opts)
+
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
