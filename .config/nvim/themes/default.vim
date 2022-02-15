@@ -1,2 +1,0 @@
-colorscheme palenight
-highlight Normal guibg=none
