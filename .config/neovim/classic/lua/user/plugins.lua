@@ -22,7 +22,7 @@ packer.startup(function()
     use "wbthomason/packer.nvim"
     use "numToStr/Comment.nvim"
     use "nvim-treesitter/nvim-treesitter"
-    use "sheerun/vim-polyglot"
+    use "JoosepAlviste/nvim-ts-context-commentstring"
     use "kyazdani42/nvim-tree.lua"
     use "windwp/nvim-autopairs"
 end)
