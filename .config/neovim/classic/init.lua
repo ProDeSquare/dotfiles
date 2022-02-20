@@ -26,6 +26,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.statusline = " %f%=%y %{&fileencoding?&fileencoding:&encoding}[%{&fileformat}] %l,%c %p%% "
 
 -- keymaps
 local keymap = function(mode, key, result)
@@ -85,4 +86,9 @@ require("nvim-tree").setup({
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- autopairs
-require('nvim-autopairs').setup{}
+require("nvim-autopairs").setup{}
+
+-- true zen
+require("true-zen").setup()
+
+keymap("n", "<leader>f", ":TZAtaraxis l20 r20 t3 b3<CR>", opts)

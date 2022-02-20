@@ -25,4 +25,5 @@ packer.startup(function()
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use "kyazdani42/nvim-tree.lua"
     use "windwp/nvim-autopairs"
+    use "Pocco81/TrueZen.nvim"
 end)
