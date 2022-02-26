@@ -1,15 +1,25 @@
 #!/bin/bash
+#
+# script to set and change wallpaper
 
-WALLPAPER_INFORMATION_FILE=~/.local/share/bg
-WALLPAPER_TO_SET=$(realpath $1)
+pgrep walls && pkill walls
 
-[ ! -f $WALLPAPER_TO_SET ] && notify-send "Error" "Not a proper file!" && exit
+WALLPAPER_INFORMATION_FILE="${XDG_DATA_HOME:-$HOME/.local/share/}/bg"
 
 [ ! -f $WALLPAPER_INFORMATION_FILE ] \
     && touch $WALLPAPER_INFORMATION_FILE \
     && echo -e "--THIS IS AN AUTO GENERATED FILE--\n" > $WALLPAPER_INFORMATION_FILE
 
-[ -f $WALLPAPER_TO_SET ] && echo $WALLPAPER_TO_SET >> $WALLPAPER_INFORMATION_FILE
+WALLPAPER_TO_SET=$(realpath $1) &&
+case "$(file --mime-type -b "$WALLPAPER_TO_SET")" in
+    image/* ) echo "$WALLPAPER_TO_SET" >> "$WALLPAPER_INFORMATION_FILE" && notify-send "Background Updated" "Wallpaper set to $(basename "$WALLPAPER_TO_SET")" --icon="$WALLPAPER_TO_SET" ;;
+    inode/directory ) echo "$WALLPAPER_TO_SET" >> "$WALLPAPER_INFORMATION_FILE" && notify-send "Background Updated" "Slideshow from $(basename "$WALLPAPER_TO_SET") directory" ;;
+    *) notify-send "Error" "Not a valid image." ; exit 1;;
+esac
 
-xwallpaper --zoom $WALLPAPER_TO_SET
-notify-send "Background Updated" "Wallpaper set to $(basename $WALLPAPER_TO_SET)" --icon=$WALLPAPER_TO_SET
+WALLPAPER_TO_SET="$(tail -n 1 "$WALLPAPER_INFORMATION_FILE")" &&
+case "$(file --mime-type -b "$WALLPAPER_TO_SET")" in
+    image/* ) xwallpaper --zoom $WALLPAPER_TO_SET ;;
+    inode/directory ) walls --interval 90 --path $WALLPAPER_TO_SET & ;;
+    * ) notify-send "Setbg Error" "There was an error setting the background!" ; exit 1 ;;
+esac
