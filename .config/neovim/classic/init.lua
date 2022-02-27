@@ -57,6 +57,12 @@ keymap("v", "p", '"_dP', opts)
 -- Plug Config
 --]]
 
+-- telescope
+require("telescope").setup()
+
+keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
+
 -- treesitter
 require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
