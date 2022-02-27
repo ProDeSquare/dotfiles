@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 require("user/plugins")
 
 -- options
+vim.opt.title = true
 vim.opt.cursorline = true
 vim.opt.backup = false
 vim.opt.cmdheight = 2
@@ -31,12 +32,7 @@ vim.opt.statusline = " %f%=%y %{&fileencoding?&fileencoding:&encoding}[%{&filefo
 
 -- keymaps
 local keymap = function(mode, key, result)
-    vim.api.nvim_set_keymap(
-        mode,
-        key,
-        result,
-        { noremap = true, silent = true }
-    )
+    vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
 end
 
 keymap("n", "<leader>w", ":w!<CR>", opts)
@@ -93,7 +89,7 @@ require("nvim-tree").setup({
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- autopairs
-require("nvim-autopairs").setup{}
+require("nvim-autopairs").setup()
 
 -- true zen
 require("true-zen").setup()
@@ -101,11 +97,17 @@ require("true-zen").setup()
 keymap("n", "<leader>f", ":TZAtaraxis l20 r20 t3 b3<CR>", opts)
 
 -- completion
+local check_backspace = function()
+    local col = vim.fn.col "." - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
+
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 cmp.setup({
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end
     },
     sources = {
@@ -156,3 +158,4 @@ cmp.setup({
         }),
     },
 })
+
