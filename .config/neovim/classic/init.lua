@@ -1,9 +1,6 @@
 -- leader key
 vim.g.mapleader = " "
 
--- plugins
-require("user/plugins")
-
 -- options
 vim.opt.title = true
 vim.opt.exrc = true
@@ -56,6 +53,9 @@ keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 keymap("n", "<leader>f", ":TZAtaraxis l30 r30 t5 b5<CR>", opts)
+
+-- plugins
+require("user/plugins")
 
 --[[
 -- Plug Config
