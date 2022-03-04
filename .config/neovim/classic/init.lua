@@ -6,6 +6,7 @@ require("user/plugins")
 
 -- options
 vim.opt.title = true
+vim.opt.exrc = true
 vim.opt.cursorline = true
 vim.opt.backup = false
 vim.opt.cmdheight = 2
@@ -28,7 +29,7 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.completeopt = { "menuone", "noselect" }
-vim.opt.statusline = " %f%=%y %{&fileencoding?&fileencoding:&encoding}[%{&fileformat}] %l,%c %p%% "
+vim.opt.statusline = " %f%=%y %{&fileencoding}[%{&fileformat}] %l,%c %p%% "
 
 -- keymaps
 local keymap = function(mode, key, result)
@@ -49,15 +50,19 @@ keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
+
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+keymap("n", "<leader>f", ":TZAtaraxis l30 r30 t5 b5<CR>", opts)
+
 --[[
 -- Plug Config
 --]]
 
 -- telescope
 require("telescope").setup()
-
-keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 
 -- treesitter
 require("nvim-treesitter.configs").setup({
@@ -72,9 +77,6 @@ require("Comment").setup()
 
 -- nvim tree
 require("nvim-tree").setup({
-    disable_netrw = true,
-    hijack_netrw = true,
-    hijack_cursor = true,
     view = {
         mappings = {
             list = {
@@ -86,30 +88,20 @@ require("nvim-tree").setup({
     },
 })
 
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- autopairs
 require("nvim-autopairs").setup()
 
 -- true zen
-require("true-zen").setup()
-
-keymap("n", "<leader>f", ":TZAtaraxis l20 r20 t3 b3<CR>", opts)
+require("true-zen").setup({
+    ui = {
+        bottom = { cursorline = false }
+    }
+})
 
 -- completion
-local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end
-    },
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
@@ -128,34 +120,5 @@ cmp.setup({
             c = cmp.mapping.close(),
         },
         ["<CR>"] = cmp.mapping.confirm { select = true },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
     },
 })
-
