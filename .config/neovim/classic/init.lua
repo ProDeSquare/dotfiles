@@ -51,16 +51,19 @@ keymap("n", "<S-Tab>", "<<_", opts)
 
 keymap("n", "S", ":%s//g<Left><Left>", opts)
 
-keymap("v", "<Tab>", ">gv", opts)
-keymap("v", "<S-Tab>", "<gv", opts)
-keymap("v", "p", '"_dP', opts)
-
 keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
-keymap("n", "<leader>f", ":TZAtaraxis l30 r30 t5 b5<CR>", opts)
+keymap("n", "<leader>f", ":TZAtaraxis l15 r15<CR>", opts)
+
+keymap("v", "<Tab>", ">gv", opts)
+keymap("v", "<S-Tab>", "<gv", opts)
+keymap("v", "p", '"_dP', opts)
+
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- autocmds
 vim.cmd[[
@@ -74,6 +77,7 @@ vim.cmd[[
     autocmd BufWritePre * %s/\n\+\%$//e
     autocmd BufWritePre *.[ch] %s/\%$/\r/e
     autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+    command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 ]]
 
 -- plugins
