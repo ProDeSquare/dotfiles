@@ -43,6 +43,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<Tab>", ">>_", opts)
 keymap("n", "<S-Tab>", "<<_", opts)
 
+keymap("n", "S", ":%s//g<Left><Left>", opts)
+
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "p", '"_dP', opts)
@@ -53,6 +55,20 @@ keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 keymap("n", "<leader>f", ":TZAtaraxis l30 r30 t5 b5<CR>", opts)
+
+-- autocmds
+vim.cmd[[
+    augroup highlight_yank
+        autocmd!
+        au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+    augroup END
+
+    autocmd BufWritePre * let currPos = getpos(".")
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufWritePre * %s/\n\+\%$//e
+    autocmd BufWritePre *.[ch] %s/\%$/\r/e
+    autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+]]
 
 -- plugins
 require("user/plugins")
