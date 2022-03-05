@@ -2,31 +2,37 @@
 vim.g.mapleader = " "
 
 -- options
-vim.opt.title = true
-vim.opt.exrc = true
-vim.opt.cursorline = true
-vim.opt.backup = false
-vim.opt.cmdheight = 2
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.mouse = "a"
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.numberwidth = 6
-vim.opt.wrap = false
-vim.opt.swapfile = false
-vim.opt.fileencoding = "utf-8"
-vim.opt.clipboard = "unnamedplus"
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.completeopt = { "menuone", "noselect" }
-vim.opt.statusline = " %f%=%y %{&fileencoding}[%{&fileformat}] %l,%c %p%% "
+local options = {
+    title = true,
+    exrc = true,
+    cursorline = true,
+    backup = false,
+    cmdheight = 2,
+    hlsearch = false,
+    incsearch = true,
+    mouse = "a",
+    number = true,
+    relativenumber = true,
+    scrolloff = 8,
+    sidescrolloff = 8,
+    numberwidth = 6,
+    wrap = false,
+    swapfile = false,
+    fileencoding = "utf-8",
+    clipboard = "unnamedplus",
+    shiftwidth = 4,
+    tabstop = 4,
+    expandtab = true,
+    smartindent = true,
+    splitright = true,
+    splitbelow = true,
+    completeopt = { "menuone", "noselect" },
+    statusline = " %f%=%y %{&fileencoding}[%{&fileformat}] %l,%c %p%% ",
+}
+
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
 
 -- keymaps
 local keymap = function(mode, key, result)
