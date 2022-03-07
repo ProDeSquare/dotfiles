@@ -6,7 +6,7 @@ super + f
     $TERMINAL -e $FILE
 
 super + grave
-    $TERMINAL -e neomutt
+    $TERMINAL -e bluetoothctl
 
 # browser
 super + b
