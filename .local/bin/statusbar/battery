@@ -13,6 +13,6 @@ capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 # fi
 
 # status=$(sed "s/[Dd]ischarging/$icon/;s/[Nn]ot charging/🛑/;s/[Cc]harging//;s/[Uu]nknown/?/;s/[Ff]ull//" /sys/class/power_supply/BAT0/status)
-status=$(sed "s/[Dd]ischarging/BATTERY:-/;s/[Nn]ot charging/🛑/;s/[Cc]harging/CHARGING:-/;s/[Uu]nknown/UNKNOWN:-/;s/[Ff]ull/CHARGED:-/" /sys/class/power_supply/BAT0/status)
+status=$(sed "s/[Dd]ischarging/BATTERY:/;s/[Nn]ot charging/🛑/;s/[Cc]harging/CHARGING:/;s/[Uu]nknown/UNKNOWN:/;s/[Ff]ull/CHARGED:/" /sys/class/power_supply/BAT0/status)
 
 printf "%s%s%s \n" "$status" "$capacity" "%"
