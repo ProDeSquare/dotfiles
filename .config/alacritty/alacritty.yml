@@ -12,8 +12,8 @@ window:
 
   # specifying padding on both x & y axis
   padding:
-    x: 10
-    y: 10
+    x: 4
+    y: 4
 
   # Add padding automatically where needed
   dynamic_padding: true
@@ -31,7 +31,7 @@ window:
 # font configuration
 font:
   normal:
-    family: Jetbrains Mono Nerd Font
+    family: Jetbrains Mono Medium Nerd Font
 
   bold:
     family: Jetbrains Mono Nerd Font
@@ -43,34 +43,34 @@ font:
     family: Jetbrains Mono Nerd Font
 
   # font-size, given in points
-  size: 8
+  size: 7.9
 
 schemes:
   # One dark color scheme
   hm: &hm
     primary:
-      background: '0x1c2023'
-      foreground: '0xc7ccd1'
+      background: '#1c2023'
+      foreground: '#c7ccd1'
 
     normal:
-      black:   '0x1e2127'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xabb2bf'
+      black:   '#1e2127'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#abb2bf'
 
     bright:
-      black:   '0x5c6370'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xffffff'
+      black:   '#5c6370'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#ffffff'
 
 
     indexed_colors: []
@@ -103,8 +103,8 @@ key_bindings:
   - { key: Key0,     mods: Alt,             action: ResetFontSize    }
   - { key: K,        mods: Alt,             action: IncreaseFontSize }
   - { key: J,        mods: Alt,             action: DecreaseFontSize }
-  - { key: K,        mods: Control|Shift,   action: ScrollLineUp     }
-  - { key: J,        mods: Control|Shift,   action: ScrollLineDown   }
+  - { key: K,        mods: Control|Shift,   action: ScrollPageUp     }
+  - { key: J,        mods: Control|Shift,   action: ScrollPageDown   }
 
 # More actions to choose from
 
