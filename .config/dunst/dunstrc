@@ -7,7 +7,7 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 2
-    frame_color = "#343a45"
+    frame_color = "#c7ccd1"
     font = "Jetbrains Mono Medium"
     format = "<b>%s</b>\n%b"
     transparency = 10
@@ -20,14 +20,17 @@
     background = "#1c2023"
     foreground = "#c7ccd1"
     timeout = 7
+    icon = ~/.config/dunst/normal.png
 
 [urgency_normal]
     background = "#1c2023"
     foreground = "#c7ccd1"
     timeout = 7
+    icon = ~/.config/dunst/normal.png
 
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 7
+    icon = ~/.config/dunst/critical.png
