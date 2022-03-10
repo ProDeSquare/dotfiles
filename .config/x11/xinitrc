@@ -9,9 +9,9 @@ numlockx &                                              # enable numlock at star
 dunst &                                                 # notifications
 unclutter &                                             # disable cursor
 sxhkd &                                                 # hotkey daemon
-dwmblocks &                                             # statusbar
 picom --experimental-backends &                         # compositor
 batsignal -w 30 -c 20 -d 15 &                           # battery notifications
 setbg &                                                 # setting background
+dwmblocks &                                             # statusbar
 
 exec dwm
