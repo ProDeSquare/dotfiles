@@ -1,6 +1,7 @@
 -- options
 local options = {
-	ruler = true,
+	ruler = false,
+    title = true,
 	number = true,
 	relativenumber = true,
 	hlsearch = false,
@@ -19,8 +20,8 @@ local options = {
 	splitright = true,
 	background = dark,
 	numberwidth = 6,
-	cmdheight = 2,
 	cursorline = true,
+    laststatus = 0,
 }
 
 for k, v in pairs(options) do
@@ -44,4 +45,3 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "p", '"_dP', opts)
-

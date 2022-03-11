@@ -7,7 +7,6 @@ local options = {
     exrc = true,
     cursorline = true,
     backup = false,
-    cmdheight = 2,
     hlsearch = false,
     incsearch = true,
     mouse = "a",
@@ -27,7 +26,9 @@ local options = {
     splitright = true,
     splitbelow = true,
     completeopt = { "menuone", "noselect" },
-    statusline = " %f%=%y %{&fileencoding}[%{&fileformat}] %l,%c %p%% ",
+    laststatus = 0,
+    ruler = false,
+    showmode = false,
 }
 
 for k, v in pairs(options) do
