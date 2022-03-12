@@ -43,10 +43,10 @@ ctrl + grave
 
 # controls (brightness)
 XF86MonBrightnessUp
-    xbacklight -inc 5 && pkill -RTMIN+11 dwmblocks
+    brightness up
 
 XF86MonBrightnessDown
-    xbacklight -dec 5 && pkill -RTMIN+11 dwmblocks
+    brightness down
 
 #controls (audio)
 XF86AudioMute

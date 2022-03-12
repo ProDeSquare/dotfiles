@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Script to control brightness
+
+function send_notification() {
+    brightness=$(printf '%.*f' 0 "$(xbacklight -get)")
+    dunstify -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness-$1" "Brightness: $brightness%" -t 1000
+}
+
+command -v xbacklight &&
+case "$1" in
+up)
+    xbacklight -inc 5
+    send_notification $1
+    ;;
+down)
+    xbacklight -dec 5
+    send_notification $1
+    ;;
+esac
