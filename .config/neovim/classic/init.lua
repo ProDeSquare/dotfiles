@@ -50,6 +50,9 @@ keymap("n", "<C-l>", "<C-w>l")
 keymap("n", "<Tab>", ">>_")
 keymap("n", "<S-Tab>", "<<_")
 
+keymap("n", "<S-h>", ":bnext<CR>")
+keymap("n", "<S-l>", ":bprevious<CR>")
+
 keymap("n", "S", ":%s//g<Left><Left>")
 
 keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>")
@@ -78,6 +81,7 @@ vim.cmd[[
     autocmd BufWritePre * %s/\n\+\%$//e
     autocmd BufWritePre *.[ch] %s/\%$/\r/e
     autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+
     command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 ]]
 
