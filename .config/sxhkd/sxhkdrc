@@ -6,7 +6,7 @@ super + f
     $TERMINAL -e $FILE
 
 super + grave
-    $TERMINAL -e bluetoothctl
+    svlist
 
 # browser
 super + b
