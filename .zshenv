@@ -22,6 +22,7 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 
 export LF_ICONS="\
 di=:\
