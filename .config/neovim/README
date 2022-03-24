@@ -1,6 +1,7 @@
 Neovim Configs
 ==============
 
-Create a symbolic link to ``.config/nvim`` directory with any variant
-I'm currently using ``root`` as the config for root user
-``Classic`` mostly, and ``IDE`` for big projects
+A symbolic link is already created for ``classic`` with ``~/.config/nvim``
+You can manually create a symbolic link with nvim config for ``root`` user
+I personally use ``classic`` variant as default nvim config, and ``root`` as
+superuser's nvim config
