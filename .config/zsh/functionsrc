@@ -3,3 +3,9 @@
 function cmkd {
     mkdir -pv -- $1 && cd -P -- $1
 }
+
+function acp {
+    git add .
+    git commit -m "$1"
+    git push
+}
