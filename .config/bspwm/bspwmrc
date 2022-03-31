@@ -5,6 +5,8 @@ bspc rule -r "*"
 killall polybar
 polybar default 2>/dev/null &
 
+pgrep bspswallow || bspswallow &
+
 xsetroot -cursor_name left_ptr &
 
 bspc monitor -d "1: " "2: " "3: 﫸" "4: " "5: " "6: " "7: " "8: " "9:  "
