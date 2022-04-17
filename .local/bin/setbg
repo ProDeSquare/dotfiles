@@ -18,6 +18,6 @@ esac
 WALLPAPER_TO_SET="$(tail -n 1 "$WALLPAPER_INFORMATION_FILE")" &&
 case "$(file --mime-type -b "$WALLPAPER_TO_SET")" in
     image/* ) xwallpaper --zoom "$WALLPAPER_TO_SET" ;;
-    inode/directory ) walls --interval 90 --path $WALLPAPER_TO_SET & ;;
+    inode/directory ) walls --interval 90 --path "$WALLPAPER_TO_SET" & ;;
     * ) notify-send "Setbg Error" "There was an error setting the background!" ; exit 1 ;;
 esac
