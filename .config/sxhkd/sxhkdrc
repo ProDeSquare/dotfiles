@@ -1,48 +1,48 @@
 ################### BSPWM Shortcuts ######################################
 
-# quit/restart bspwm
-super + shift + {e,r}
-	bspc {quit,wm -r}
-
-# focus the last node/desktop
-alt + Tab
-	bspc desktop -f last
-
-# close and kill
-super + shift + q
-	bspc node -{c,k}
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# focus the older or newer node in the focus history
-super + {j,k}
-	bspc node -f {next,prev}.local.!hidden.window
-
-# focus the last node/desktop
-alt + Tab
-	bspc desktop -f last
-
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
-
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
-
-# set the window state
-super + {t,shift + t,s,shift + f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
+# # quit/restart bspwm
+# super + shift + {e,r}
+# 	bspc {quit,wm -r}
+#
+# # focus the last node/desktop
+# alt + Tab
+# 	bspc desktop -f last
+#
+# # close and kill
+# super + shift + q
+# 	bspc node -{c,k}
+#
+# # focus or send to the given desktop
+# super + {_,shift + }{1-9,0}
+# 	bspc {desktop -f,node -d} '^{1-9,10}'
+#
+# # preselect the direction
+# super + ctrl + {h,j,k,l}
+# 	bspc node -p {west,south,north,east}
+#
+# # focus the older or newer node in the focus history
+# super + {j,k}
+# 	bspc node -f {next,prev}.local.!hidden.window
+#
+# # focus the last node/desktop
+# alt + Tab
+# 	bspc desktop -f last
+#
+# # expand a window by moving one of its side outward
+# super + alt + {h,j,k,l}
+# 	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+#
+# # contract a window by moving one of its side inward
+# super + alt + shift + {h,j,k,l}
+# 	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+#
+# # set the window state
+# super + {t,shift + t,s,shift + f}
+# 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+#
+# # alternate between the tiled and monocle layout
+# super + m
+# 	bspc desktop -l next
 
 ################### Other Shortcuts ######################################
 

@@ -12,5 +12,6 @@ sxhkd &                                                 # hotkey daemon
 picom --experimental-backends &                         # compositor
 batsignal -w 30 -c 20 -d 15 &                           # battery notifications
 setbg &                                                 # setting background
+dwmblocks &                                             # dwmblocks
 
-exec bspwm
+exec dwm
