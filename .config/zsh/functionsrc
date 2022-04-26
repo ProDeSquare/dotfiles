@@ -9,3 +9,7 @@ function acp {
     git commit -m "$1"
     git push
 }
+
+function gh {
+    grep "$1" $HISTFILE --color=auto
+}
