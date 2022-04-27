@@ -14,7 +14,7 @@ cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f" ;;
         image/x-xcf) gimp "$f" ;;
-        image/*) sxiv -a "$f";;
+        image/*) nsxiv -a "$f";;
         application/pdf|application/vnd*|application/epub*) zathura "$f" ;;
         *) xdg-open "$f" ;;
     esac
@@ -98,6 +98,11 @@ map mf makefile
 map md mkdir
 map r rename
 map bg setwallpaper
+
+# cd shortcuts
+map gpi cd ~/docx/pictures/
+map gps cd ~/docx/pictures/screenshots
+map gpw cd ~/docx/pictures/wallpapers
 
 # mouse
 map <m-2> updir
