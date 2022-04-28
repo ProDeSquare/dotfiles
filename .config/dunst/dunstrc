@@ -14,7 +14,7 @@
     word_wrap = yes
     stack_duplicates = true
     corner_radius = 4
-
+    mouse_left_click = do_action, close_current
 
 [urgency_low]
     background = "#1c2023"
