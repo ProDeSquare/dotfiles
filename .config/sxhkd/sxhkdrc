@@ -64,15 +64,11 @@ super + ctrl + b
     $BROWSER --incognito
 
 # dmenu
-super + shift + x
+super + x
     sysact
 
 super + slash
     dmenu_run -l 7 -c
-
-# screenlock
-super + x
-    slock
 
 # screenshot
 Print
