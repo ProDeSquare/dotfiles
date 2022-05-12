@@ -1,18 +1,14 @@
 #!/bin/sh
 
-# xinput --set-prop "SynPS/2 Synaptics TouchPad" \
-#     "Synaptics Palm Detection" 1 &                      # palm detection
+xinput --set-prop "SynPS/2 Synaptics TouchPad" \
+    "Synaptics Palm Detection" 1 &                      # palm detection
 
 xrdb -merge "$XDG_CONFIG_HOME/x11/xresources" &         # merging xresources
 
-picom --experimental-backends &                         # compositor
-batsignal -w 30 -c 20 -d 15 &                           # battery notifications
-setbg &                                                 # setting background
-
-startup=("numlockx" "dunst" "unclutter" "sxhkd" "dwmblocks")
+startup=("numlockx" "dunst" "unclutter" "sxhkd" "picom --experimental-backends" "batsignal -w 30" "dwmblocks" "setbg")
 
 for pgr in "${startup[@]}"; do
-    pidof -s "$pgr" || "$pgr" &                         # starting programs
+    pidof -s "${pgr%% *}" || "$($pgr)" &                # starting programs
 done >/dev/null 2>&1
 
 exec dwm
