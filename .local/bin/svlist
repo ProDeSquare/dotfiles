@@ -2,10 +2,11 @@
 #
 # list services
 
-case "$(printf "Update\nBluetooth\nWi-Fi\nHtop" | dmenu -i -p 'Service: ')" in
+case "$(printf "Update\nBluetooth\nWi-Fi\nHtop\nCointop" | dmenu -i -l 5 -c)" in
     'Update') $TERMINAL -e sudo pacman -Syyu --noconfirm ;;
     'Bluetooth') $TERMINAL -e bluetoothctl ;;
     'Wi-Fi') $TERMINAL -e nmtui ;;
     'Htop') $TERMINAL -e htop ;;
+    'Cointop') $TERMINAL -e cointop ;;
     *) exit 1 ;;
 esac
