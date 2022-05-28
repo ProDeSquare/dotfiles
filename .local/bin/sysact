@@ -5,10 +5,9 @@ case "$(readlink -f /sbin/init)" in
     *) ctl='loginctl' ;;
 esac
 
-# case "$(printf "Lock\nLeave WM\nSuspend\nReboot\nShutdown" | dmenu -i -p 'Action: ')" in
 case "$(printf "Lock\nLeave WM\nSuspend\nReboot\nShutdown" | dmenu -l 5 -c -i)" in
-    'Lock') slock ;;
-    'Leave WM') kill -TERM "$(pgrep -u "$USER" "\bbspwm$")" ;;
+    'Lock') sleep 1; slock ;;
+    'Leave WM') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
     'Suspend') $ctl suspend ;;
     'Reboot') $ctl reboot ;;
     'Shutdown') $ctl poweroff ;;
