@@ -13,3 +13,13 @@ function acp {
 function gh {
     grep "$1" $HISTFILE --color=auto
 }
+
+# for runit
+function renable {
+    sudo ln -s /etc/runit/sv/$1 /run/runit/service/
+    sudo sv start $1
+}
+
+function rdisable {
+    sudo rm /run/runit/service/$1
+}
