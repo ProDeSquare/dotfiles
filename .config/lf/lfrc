@@ -2,7 +2,7 @@ set ratios 1:2:3
 set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/preview
 set preview true
-set drawbox true
+# set drawbox true
 set icons true
 set sortby time
 set reverse true
