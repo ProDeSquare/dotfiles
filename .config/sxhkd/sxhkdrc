@@ -70,6 +70,9 @@ super + x
 super + slash
     dmenu_run -l 7 -c
 
+super + w
+    clipmenu -c
+
 # screenshot
 Print
     screenshot
