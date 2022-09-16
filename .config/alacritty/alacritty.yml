@@ -12,8 +12,8 @@ window:
 
   # specifying padding on both x & y axis
   padding:
-    x: 4
-    y: 4
+    x: 15
+    y: 15
 
   # Add padding automatically where needed
   dynamic_padding: true
@@ -26,12 +26,12 @@ window:
   gtk_theme_variant: dark
 
   # setting the window opacity
-  opacity: 0.95
+  opacity: 0.85
 
 # font configuration
 font:
   normal:
-    family: Jetbrains Mono Medium Nerd Font
+    family: Jetbrains Mono Nerd Font
 
   bold:
     family: Jetbrains Mono Nerd Font
