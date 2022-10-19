@@ -30,6 +30,7 @@ fi=:\
 ln=:\
 or=:\
 ex=:\
+*.avif=:\
 *.vimrc=:\
 *.viminfo=:\
 *.gitignore=:\
