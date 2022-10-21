@@ -14,7 +14,7 @@ cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f" ;;
         image/x-xcf) gimp "$f" ;;
-        image/*) nsxiv -a "$f";;
+        image/*) nsxiv -ab "$f";;
         application/pdf|application/vnd*|application/epub*) zathura "$f" ;;
         *) xdg-open "$f" ;;
     esac
@@ -45,6 +45,7 @@ cmd unarchive ${{
 
 # wallpaper
 cmd setwallpaper %setbg "$f"
+cmd settempwallpaper %xwallpaper --zoom "$f"
 
 # archive
 cmd zip %zip -r "$f" "$f"
@@ -98,6 +99,7 @@ map mf makefile
 map md mkdir
 map r rename
 map bg setwallpaper
+map bb settempwallpaper
 
 # cd shortcuts
 map gpi cd ~/docx/pictures/
