@@ -22,9 +22,6 @@ window:
   # Best for tiling window managers
   decorations: none
 
-  # telling alacrity to use dark theme
-  gtk_theme_variant: dark
-
   # setting the window opacity
   opacity: 0.85
 
