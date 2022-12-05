@@ -3,4 +3,4 @@
 # Set wallpaper with
 
 # xwallpaper --zoom "$1" # supports JPEG, PNG, XPM
-feh --bg-fill "$1"
+feh --no-fehbg --bg-fill "$1"
