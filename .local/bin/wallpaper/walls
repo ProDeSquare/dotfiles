@@ -22,7 +22,7 @@ while :
 do
     for image in $(cat $HOME/.cache/bg.txt)
     do
-        xwallpaper --zoom "$image"
+        setwall "$image"
         sleep $interval
     done
 done
