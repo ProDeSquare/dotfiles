@@ -14,6 +14,11 @@ function gh {
     grep "$1" $HISTFILE --color=auto
 }
 
+# convert m3u8
+function blobvidl {
+    ffmpeg -i "$1" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 "$2"
+}
+
 # for runit
 function renable {
     sudo ln -s /etc/runit/sv/$1 /run/runit/service/
