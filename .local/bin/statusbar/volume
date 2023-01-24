@@ -14,4 +14,4 @@ vol="$(echo "$volstat" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
 # 	icon=""
 # fi
 
-printf "%s%s%% \\n" "VOLUME:" "$vol"
+printf "%s%s%% \\n" "AUD:" "$vol"
