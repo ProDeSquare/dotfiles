@@ -32,7 +32,10 @@ Print
     screenshot
 
 super + Print
-    screenshot partial
+    screenshot select
+
+super + shift + Print
+    screenshot window
 
 # start/kill compositor
 super + c
