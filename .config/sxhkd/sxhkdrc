@@ -31,6 +31,9 @@ super + w
 Print
     screenshot
 
+super + Print
+    screenshot partial
+
 # start/kill compositor
 super + c
     compositor
