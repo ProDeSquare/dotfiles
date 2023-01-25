@@ -6,12 +6,10 @@ SCRDIR="$HOME/docx/pictures/screenshots/"
 
 [ -d "$SCRDIR" ] || mkdir -p $SCRDIR
 
-if [ "$1" == "partial" ]; then
-    SCR="$SCRDIR/screenshot_part-$(date '+%y%m%d_%H%M%S').png"
-    scrot -s "$SCR"
-else
-    SCR="$SCRDIR/screenshot_full-$(date '+%y%m%d_%H%M%S').png"
-    maim "$SCR"
-fi
+case "$1" in
+    select) SCR="$SCRDIR/screenshot_part-$(date '+%y%m%d_%H%M%S').png"; scrot -z -s "$SCR" ;;
+    window) SCR="$SCRDIR/screenshot_wind-$(date '+%y%m%d_%H%M%S').png"; scrot -z -u "$SCR" ;;
+    *) SCR="$SCRDIR/screenshot_full-$(date '+%y%m%d_%H%M%S').png"; scrot -z "$SCR" ;;
+esac
 
 [ -f "$SCR" ] && notify-send "Screenshot" "Saved in your screenshots directory" -i $SCR
