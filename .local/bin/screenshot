@@ -7,7 +7,7 @@ SCRDIR="$HOME/docx/pictures/screenshots/"
 [ -d "$SCRDIR" ] || mkdir -p $SCRDIR
 
 if [ "$1" == "partial" ]; then
-    SCR="$SCRDIR/screenshot_partial-$(date '+%y%m%d_%H%M%S').png"
+    SCR="$SCRDIR/screenshot_part-$(date '+%y%m%d_%H%M%S').png"
     scrot -s "$SCR"
 else
     SCR="$SCRDIR/screenshot_full-$(date '+%y%m%d_%H%M%S').png"
