@@ -23,6 +23,7 @@ export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/config"
 
 export LF_ICONS="\
 di=:\
