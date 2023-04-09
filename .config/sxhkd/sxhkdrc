@@ -57,10 +57,10 @@ XF86MonBrightnessDown
 
 #controls (audio)
 XF86AudioMute
-    pactl set-sink-mute 0 toggle && pkill -RTMIN+10 dwmblocks
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 dwmblocks
 
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume 0 {+,-}5% && pkill -RTMIN+10 dwmblocks
+    pactl set-sink-volume @DEFAULT_SINK@ {+,-}5% && pkill -RTMIN+10 dwmblocks
 
 # make sxhkd reload its configuration files:
 super + Escape
