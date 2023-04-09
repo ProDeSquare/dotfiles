@@ -1,17 +1,17 @@
 #!/bin/sh
 
-volstat="$(pactl list sinks)"
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
-echo "$volstat" | grep -q "Mute: yes" && printf "MUTED \\n" && exit
+[ "$vol" != "${vol%\[MUTED\]}" ] && printf "MUTED \\n" && exit
 
-vol="$(echo "$volstat" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
+vol="${vol#Volume: }"
 
-# if [ "$vol" -gt "70" ]; then
-# 	icon=""
-# elif [ "$vol" -lt "30" ]; then
-# 	icon=""
-# else
-# 	icon=""
-# fi
+split() {
+	IFS=$2
+	set -- $1
+	printf '%s' "$@"
+}
+
+vol="$(printf "%.0f" "$(split "$vol" ".")")"
 
 printf "%s%s%% \\n" "AUD:" "$vol"
