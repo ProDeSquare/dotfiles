@@ -1,25 +1,26 @@
 !! Transparency (0-1):
-*.alpha: 0.9
+*.alpha:        0.85
 
 !! Set a default font and font size as below:
-*.font: SF Mono Nerd Font:size=12:style=Medium
+*.font:         SF Mono Nerd Font:size=10:style=Medium
+st.font:        Jetbrains Mono Nerd Font:size=12:style=Medium
 
 !! default:
-*.background: #1c2023
-*.foreground: #c7ccd1
-*.color0: #1e2127
-*.color1: #e06c75
-*.color2: #98c379
-*.color3: #d19a66
-*.color4: #61afef
-*.color5: #c678dd
-*.color6: #56b6c2
-*.color7: #abb2bf
-*.color8: #5c6370
-*.color9: #e06c75
-*.color10: #98c379
-*.color11: #d19a66
-*.color12: #61afef
-*.color13: #c678dd
-*.color14: #56b6c2
-*.color15: #ffffff
+*.background:   #002221
+*.foreground:   #e6f8f8
+*.color0:       #002221
+*.color1:       #ea3431
+*.color2:       #00B6B6
+*.color3:       #F8B017
+*.color4:       #4894fd
+*.color5:       #e01dca
+*.color6:       #1ab2ad
+*.color7:       #99dddb
+*.color8:       #006562
+*.color9:       #ea3431
+*.color10:      #00B6B6
+*.color11:      #F8B017
+*.color12:      #4894fd
+*.color13:      #e01dca
+*.color14:      #1ab2ad
+*.color15:      #e6f6f6
