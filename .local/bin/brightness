@@ -1,20 +1,30 @@
-#!/bin/sh
-#
-# Script to control brightness
+#!/bin/bash
 
-function send_notification() {
-    brightness=$(printf '%.*f' 0 "$(xbacklight -get)")
-    dunstify -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness-$1" "Brightness: $brightness%" -t 1000
-}
+steps=(3 4 5 6 7 9 10 13 15 19 23 28 34 41 50 61 74 90 100)
 
-command -v xbacklight &&
+current_step=$(printf "%.0f" "$(xbacklight -get)")
+
+[[ ! "${steps[@]}" =~ "$current_step" ]] && \
+        xbacklight -set 23
+
+for step in "${!steps[@]}"; do
+    [[ "${steps[$step]}" = "$current_step" ]] && \
+            current_index=$((step)) && \
+            break
+done
+
 case "$1" in
-up)
-    xbacklight -inc 5
-    send_notification $1
-    ;;
-down)
-    xbacklight -dec 5
-    send_notification $1
-    ;;
+    up)
+        next_index=$(( (current_index + 1) % ${#steps[@]} ))
+        [ "$next_index" -eq 0 ] && exit
+        next_step=${steps[$next_index]}
+        xbacklight -set "$next_step"
+        ;;
+    down)
+        prev_index=$(( (current_index - 1) % ${#steps[@]} ))
+        [ "$prev_index" -eq -1 ] && exit
+        prev_step=${steps[$prev_index]}
+        xbacklight -set "$prev_step"
+        ;;
+    *) printf "%s%% \n" "$current_step" ;;
 esac
