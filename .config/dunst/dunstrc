@@ -7,7 +7,7 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 2
-    frame_color = "#c7ccd1"
+    frame_color = "#00b6b6"
     font = "Jetbrains Mono Medium"
     format = "<b>%s</b>\n%b"
     transparency = 10
@@ -15,16 +15,18 @@
     stack_duplicates = true
     corner_radius = 4
     mouse_left_click = do_action, close_current
+    text_icon_padding=15
+    max_icon_size=150
 
 [urgency_low]
-    background = "#1c2023"
-    foreground = "#c7ccd1"
+    background = "#002221"
+    foreground = "#e6f8f8"
     timeout = 7
     icon = ~/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#1c2023"
-    foreground = "#c7ccd1"
+    background = "#002221"
+    foreground = "#e6f8f8"
     timeout = 7
     icon = ~/.config/dunst/normal.png
 
