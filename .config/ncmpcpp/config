@@ -1,0 +1,29 @@
+mpd_port = 6600
+mpd_host = 127.0.0.1
+mpd_crossfade_time = 2
+mpd_music_dir = ~/docx/music
+
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = "Visualizer feed"
+visualizer_in_stereo = no
+visualizer_sync_interval = 30
+visualizer_type = spectrum
+visualizer_look = "┃┃"
+
+autocenter_mode = yes
+playlist_display_mode = classic
+
+song_library_format = {{%a - %t} (%b)}|{%f}
+song_list_format = "$8·$9 $4{%a}|{UNK}$9 $8·$9$3 {%t}|{%f} $R $5%l$9"
+song_status_format = "{{%a{ $6·$9 %b{, %y}} $6·$9 }{%t$/b}}|{$b%f$/b}"
+
+progressbar_color = 3
+progressbar_look = "___"
+progressbar_elapsed_color = 4
+
+header_visibility = no
+titles_visibility = no
+
+statusbar_color = black
