@@ -7,6 +7,15 @@ super + Return
 super + f
     $TERMINAL -e $FILE
 
+super + m
+    $TERMINAL -e neomutt
+
+super + s
+    $TERMINAL -e spt
+
+super + n
+    $TERMINAL -e ncmpcpp
+
 super + grave
     svlist
 
