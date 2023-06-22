@@ -26,3 +26,5 @@ header_visibility = no
 titles_visibility = no
 
 statusbar_color = black
+
+execute_on_song_change = pkill -RTMIN+17 dwmblocks
