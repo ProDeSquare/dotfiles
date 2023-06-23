@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PLAYING=$(mpc current 2>/dev/null)
+[ -n "$PLAYING" ] && printf "%s %s %s\n" "󰎈" "$(echo $PLAYING | awk -F ' - ' '{print $2}')" "•"
