@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+#
+# Script prints currently playing track name
 
-STATUS=$(mpc | awk 'NR==2 {print $1}')
-
-[[ "$STATUS" == "[playing]" ]] && printf "%s %s %s\n" "󰎈" "$(echo $(mpc current) | awk -F ' - ' '{print $2}')" "•"
+[ "$(mpc | awk 'NR==2 {print $1}')" == "[playing]" ] && \
+    printf "%s %s %s\n" "󰎈" "$(echo $(mpc current) | awk -F ' - ' '{print $2}')" "•"
