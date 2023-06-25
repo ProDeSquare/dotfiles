@@ -5,8 +5,8 @@
 *.font:         SF Mono Nerd Font:size=10:style=Medium
 st.font:        Jetbrains Mono Nerd Font:size=12:style=Medium
 
-!! default:
-*.background:   #002221
+!! marine-dark:
+*.background:   #001110
 *.foreground:   #e6f8f8
 *.color0:       #002221
 *.color1:       #ea3431
@@ -23,4 +23,4 @@ st.font:        Jetbrains Mono Nerd Font:size=12:style=Medium
 *.color12:      #4894fd
 *.color13:      #e01dca
 *.color14:      #1ab2ad
-*.color15:      #e6f6f6
+*.color15:      #bae3e3
