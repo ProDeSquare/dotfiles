@@ -32,6 +32,7 @@ Clone the repository directly into your home directory and ensure you have the n
     - Pipewire (Audio)
     - Scrot (Screenshot)
     - Spotify-TUI (Music)
+    - [Ueberzugpp](https://github.com/jstkdng/ueberzugpp) (Image previews in lf)
     - Zathura (PDF Viewer)
 
 ## Donate
