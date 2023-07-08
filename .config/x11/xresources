@@ -1,5 +1,5 @@
 !! Transparency (0-1):
-*.alpha:        0.85
+*.alpha:        0.95
 
 !! Set a default font and font size as below:
 *.font:         SF Mono Nerd Font:size=10:style=Medium
