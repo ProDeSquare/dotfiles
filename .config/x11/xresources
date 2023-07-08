@@ -6,9 +6,9 @@
 st.font:        Jetbrains Mono Nerd Font:size=12:style=Medium
 
 !! marine-dark:
-*.background:   #001110
+*.background:   #001a19
 *.foreground:   #e6f8f8
-*.color0:       #002221
+*.color0:       #001a19
 *.color1:       #ea3431
 *.color2:       #00B6B6
 *.color3:       #F8B017
