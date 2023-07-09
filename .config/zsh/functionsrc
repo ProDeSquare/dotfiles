@@ -19,6 +19,16 @@ function blobvidl {
     ffmpeg -i "$1" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 "$2"
 }
 
+# add audio to video
+function ffaudio {
+    ffmpeg -i "$1" -i "$2" -c:v copy -map 0:v -map 1:a -y merged-audio.mp4
+}
+
+# extract audio from video
+function ffeaudio {
+    ffmpeg -i "$1" -vn -ac 2 extracted-audio.mp3
+}
+
 # for runit
 function renable {
     sudo ln -s /etc/runit/sv/$1 /run/runit/service/
