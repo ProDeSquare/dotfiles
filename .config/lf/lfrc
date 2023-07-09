@@ -102,6 +102,9 @@ map bg setwallpaper
 map bb settempwallpaper
 
 # cd shortcuts
+map gc cd ~/.config/
+map gb cd ~/.local/bin
+map gs cd ~/.local/share
 map gpi cd ~/docx/pictures/
-map gps cd ~/docx/pictures/screenshots
 map gpw cd ~/docx/pictures/wallpapers
+map gps cd ~/docx/pictures/screenshots
