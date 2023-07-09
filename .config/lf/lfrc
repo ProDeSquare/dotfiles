@@ -105,8 +105,3 @@ map bb settempwallpaper
 map gpi cd ~/docx/pictures/
 map gps cd ~/docx/pictures/screenshots
 map gpw cd ~/docx/pictures/wallpapers
-
-# mouse
-map <m-2> updir
-map <m-up> up
-map <m-down> down
