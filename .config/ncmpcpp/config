@@ -25,7 +25,7 @@ progressbar_elapsed_color = 4
 header_visibility = no
 titles_visibility = no
 
-statusbar_color = black
+statusbar_color = cyan
 
 execute_on_song_change = pkill -RTMIN+17 dwmblocks
 execute_on_player_state_change = pkill -RTMIN+17 dwmblocks
