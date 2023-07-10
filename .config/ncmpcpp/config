@@ -19,7 +19,7 @@ song_list_format = "$8·$9 $4{%t}|{%f}$9 $8·$9$3 {%a}|{UNK} $R $5%l$9"
 song_status_format = "{{%a{ $6·$9 %b{, %y}} $6·$9 }{%t$/b}}|{$b%f$/b}"
 
 progressbar_color = 3
-progressbar_look = "___"
+progressbar_look = ""
 progressbar_elapsed_color = 4
 
 header_visibility = no
