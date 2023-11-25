@@ -28,16 +28,17 @@ window:
 # font configuration
 font:
   normal:
-    family: Jetbrains Mono Nerd Font
+    family: JetbrainsMono NF
+    style: Medium
 
   bold:
-    family: Jetbrains Mono Nerd Font
+    family: JetbrainsMono NF
 
   italic:
-    family: Jetbrains Mono Nerd Font
+    family: JetbrainsMono NF
 
   bold_italic:
-    family: Jetbrains Mono Nerd Font
+    family: JetbrainsMono NF
 
   # font-size, given in points
   size: 7.9
