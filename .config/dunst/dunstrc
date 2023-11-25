@@ -8,31 +8,32 @@
     horizontal_padding = 10
     frame_width = 2
     frame_color = "#00b6b6"
-    font = "Jetbrains Mono Medium"
+    font = "JetbrainsMono NF Medium"
     format = "<b>%s</b>\n%b"
-    transparency = 10
+    transparency = 20
     word_wrap = yes
     stack_duplicates = true
-    corner_radius = 4
+    corner_radius = 0
     mouse_left_click = do_action, close_current
-    text_icon_padding=15
-    max_icon_size=150
+    text_icon_padding = 18
+    max_icon_size = 90
 
 [urgency_low]
-    background = "#002221"
-    foreground = "#e6f8f8"
+    background = "#66cbc8"
+    foreground = "#003332"
+    frame_color = "#00b6b6"
     timeout = 7
-    icon = ~/.config/dunst/normal.png
+    icon = ~/.config/dunst/low.png
 
 [urgency_normal]
-    background = "#002221"
-    foreground = "#e6f8f8"
+    background = "#bae3e3"
+    foreground = "#002221"
     timeout = 7
     icon = ~/.config/dunst/normal.png
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    background = "#ffe512"
+    foreground = "#002221"
+    frame_color = "#bae3e3"
     timeout = 7
     icon = ~/.config/dunst/critical.png
