@@ -24,8 +24,9 @@ local options = {
     splitbelow = true,
     completeopt = { "menuone", "noselect" },
     laststatus = 0,
-    ruler = false,
-    showmode = false,
+    fillchars = { eob = " " },
+    -- ruler = false,
+    -- showmode = false,
 }
 
 for k, v in pairs(options) do
