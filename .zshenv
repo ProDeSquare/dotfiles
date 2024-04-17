@@ -24,6 +24,7 @@ export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/config"
+export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
 
 export LF_ICONS="\
 di=:\
