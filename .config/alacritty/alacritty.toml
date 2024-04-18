@@ -1,0 +1,91 @@
+import = ["/home/hamza/.config/alacritty/colorschemes/marine-dark.toml"]
+live_config_reload = true
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8
+
+[font.bold]
+family = "SF Mono Nerd Font"
+
+[font.bold_italic]
+family = "SF Mono Nerd Font"
+
+[font.italic]
+family = "SF Mono Nerd Font"
+
+[font.normal]
+family = "SF Mono Nerd Font"
+style = "Medium"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "T"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "K"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "J"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "D"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "U"
+mods = "Control|Shift"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "none"
+dynamic_padding = true
+opacity = 0.9
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 22
+y = 25
