@@ -24,5 +24,9 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-# format our main prompt for hostname current folder, and permissions.
-PROMPT="%{$fg[yellow]%}%n%{$reset_color%}@%M %{$fg[yellow]%}%~%{$reset_color%}\$vcs_info_msg_0_> "
+PROMPT="%{$fg[yellow]%}%n%{$reset_color%}@%M %{$fg[yellow]%}%~%{$reset_color%}\$vcs_info_msg_0_> " # user@host dir (git info)>
+# PROMPT="%{$fg[blue]%}%~%{$reset_color%} " # dir
+# PROMPT="%{$fg[yellow]%}%n %{$fg[cyan]%}in %{$fg[yellow]%}%1~%{$reset_color%}\$vcs_info_msg_0_> " # user in dir (git info) >
+# PROMPT="%{$fg[yellow]%}%1~%{$reset_color%}\$vcs_info_msg_0_> " # dir (git info)>
+
+# RPROMPT="%B%{$fg[yellow]%}[%{$fg[red]%}%h%{$fg[yellow]%}]%{$reset_color%}%b" # [history number]
