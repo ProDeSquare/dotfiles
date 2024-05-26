@@ -1,12 +1,5 @@
 #!/bin/bash
+#
+# Script to toggle compositor
 
-# pgrep -x picom >/dev/null && killall picom || picom --experimental-backends
-
-if pgrep -x picom >/dev/null
-then
-    killall picom
-    notify-send "Picom" "Picom killed!"
-else
-    notify-send "Picom" "Picom started!"
-    picom --experimental-backends
-fi
+pgrep -x picom >/dev/null && killall picom || picom
