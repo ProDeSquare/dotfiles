@@ -5,7 +5,7 @@ xinput --set-prop "SynPS/2 Synaptics TouchPad" \
 
 xrdb -merge "$XDG_CONFIG_HOME/x11/xresources" &         # merging xresources
 
-startup=("numlockx" "dunst" "unclutter" "sxhkd" "picom --experimental-backends" "dwmblocks" "setbg" "clipmenud" "mpd")
+startup=("numlockx" "dunst" "unclutter" "sxhkd" "picom" "dwmblocks" "setbg" "clipmenud" "mpd")
 
 for pgr in "${startup[@]}"; do
     pidof -s "${pgr%% *}" || "$($pgr)" &                # starting programs
