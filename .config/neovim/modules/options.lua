@@ -25,6 +25,7 @@ local options = {
     completeopt = { "menuone", "noselect" },
     laststatus = 0,
     fillchars = { eob = " " },
+    termguicolors = true,
     -- ruler = false,
     -- showmode = false,
 }

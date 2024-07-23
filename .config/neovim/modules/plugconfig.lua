@@ -7,12 +7,7 @@ end
 -- treesitter
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if status_ok then
-    treesitter.setup {
-        -- ensure_installed = "maintained",
-        highlight = { enable = true, additional_vim_regex_highlighting = true },
-        indent = { enable = true, disable = { "yaml" } },
-        context_commentstring = { enable = true, enable_autocmd = false },
-    }
+    treesitter.setup {}
 end
 
 -- comments
@@ -107,8 +102,14 @@ end
 local status_ok, true_zen = pcall(require, "true-zen")
 if status_ok then
     true_zen.setup {
-        ui = {
-            bottom = { cursorline = false }
+        modes = {
+            ataraxis = {
+                callbacks = {
+                    open_pre = function()
+                        --
+                    end
+                }
+            }
         }
     }
 end
@@ -141,3 +142,15 @@ if status_ok then
         }
     end
 end
+
+-- colorscheme
+require('marine-dark').setup()
+
+-- transparency
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'MsgArea', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'NONE' })

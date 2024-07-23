@@ -42,7 +42,7 @@ return packer.startup(function(use)
     use "numToStr/Comment.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use "JoosepAlviste/nvim-ts-context-commentstring"
-    use "kyazdani42/nvim-tree.lua"
+    use "nvim-tree/nvim-tree.lua"
     use "windwp/nvim-autopairs"
     use "Pocco81/TrueZen.nvim"
     use "neovim/nvim-lspconfig"
@@ -55,6 +55,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lua"
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
+    use "MarineDark/marine-dark.nvim"
     use {
         "nvim-telescope/telescope.nvim",
         requires = {{ "nvim-lua/plenary.nvim" }}
