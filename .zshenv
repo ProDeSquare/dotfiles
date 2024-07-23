@@ -9,6 +9,7 @@ export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export XSERVERRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xserverrc"
+export XAUTHORITY="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xauthority"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/histfile"
 export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
@@ -25,6 +26,8 @@ export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/config"
 export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+export RUSTUP="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/nv"
 
 export LF_ICONS="\
 di=:\
