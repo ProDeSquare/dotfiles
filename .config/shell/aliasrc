@@ -8,10 +8,7 @@ alias \
     cp="cp -iv" \
     mv="mv -iv" \
     rm="rm -Iv" \
-    mkd="mkdir -pv" \
-    yt="youtube-dl --add-metadata -i" \
-    vg="vagrant" \
-    sxiv="sxiv -a"
+    mkdir="mkdir -pv"
 
 # Colorize commands when possible.
 alias \
@@ -23,16 +20,29 @@ alias \
 # commands too long
 alias \
 	ka="killall" \
-	g="git" \
-	sdn="sudo shutdown -h now" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="sudo pacman" \
+    yt="youtube-dl --add-metadata -i" \
+    ws="windscribe"
+
+# package managers
+alias \
+    p="sudo pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
-	xq="xbps-query" \
+	xq="xbps-query"
+
+# init systems
+alias \
 	ru="sudo rc-update" \
-	rs="sudo rc-service"
+	rs="sudo rc-service" \
+    sct="sudo systemctl"
+
+# long dev commands
+alias \
+    pas="php artisan serve" \
+    pat="php artisan test" \
+    pr="pnpm run"
 
 command -v thefuck >/dev/null && eval $(thefuck --alias)
