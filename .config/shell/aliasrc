@@ -24,7 +24,8 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
     yt="youtube-dl --add-metadata -i" \
-    ws="windscribe"
+    ws="windscribe" \
+    svn="svn --config-dir \"$XDG_CONFIG_HOME/subversion\""
 
 # package managers
 alias \
