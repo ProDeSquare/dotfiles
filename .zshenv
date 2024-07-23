@@ -26,7 +26,7 @@ export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/config"
 export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
-export RUSTUP="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/nv"
 
 export LF_ICONS="\
