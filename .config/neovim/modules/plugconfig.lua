@@ -1,156 +1,172 @@
 -- telescope
 local status_ok, telescope = pcall(require, "telescope")
 if status_ok then
-    telescope.setup {}
+	telescope.setup({
+		extensions = {
+			["ui-select"] = {
+				require("telescope.themes").get_dropdown({}),
+			},
+		},
+	})
+
+	require("telescope").load_extension("ui-select")
 end
 
 -- treesitter
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if status_ok then
-    treesitter.setup {}
+	treesitter.setup({
+		auto_install = true,
+		highlight = { enable = true },
+		indent = { enable = true },
+	})
 end
 
 -- comments
 local status_ok, comment = pcall(require, "Comment")
 if status_ok then
-    comment.setup {}
+	comment.setup({})
 end
-
--- nvim tree
-local function on_attach(bufnr)
-    local api = require "nvim-tree.api"
-
-    local function opts(desc)
-        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
-
-    vim.keymap.set("n", "<C-]>", api.tree.change_root_to_node, opts "CD")
-    vim.keymap.set("n", "<C-e>", api.node.open.replace_tree_buffer, opts "Open: In Place")
-    vim.keymap.set("n", "<C-k>", api.node.show_info_popup, opts "Info")
-    vim.keymap.set("n", "<C-r>", api.fs.rename_sub, opts "Rename: Omit Filename")
-    vim.keymap.set("n", "<C-t>", api.node.open.tab, opts "Open: New Tab")
-    vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts "Open: Vertical Split")
-    vim.keymap.set("n", "<C-x>", api.node.open.horizontal, opts "Open: Horizontal Split")
-    vim.keymap.set("n", "<BS>", api.node.navigate.parent_close, opts "Close Directory")
-    vim.keymap.set("n", "<CR>", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "<Tab>", api.node.open.preview, opts "Open Preview")
-    vim.keymap.set("n", ">", api.node.navigate.sibling.next, opts "Next Sibling")
-    vim.keymap.set("n", "<", api.node.navigate.sibling.prev, opts "Previous Sibling")
-    vim.keymap.set("n", ".", api.node.run.cmd, opts "Run Command")
-    vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts "Up")
-    vim.keymap.set("n", "a", api.fs.create, opts "Create")
-    vim.keymap.set("n", "bmv", api.marks.bulk.move, opts "Move Bookmarked")
-    vim.keymap.set("n", "B", api.tree.toggle_no_buffer_filter, opts "Toggle No Buffer")
-    vim.keymap.set("n", "c", api.fs.copy.node, opts "Copy")
-    vim.keymap.set("n", "C", api.tree.toggle_git_clean_filter, opts "Toggle Git Clean")
-    vim.keymap.set("n", "[c", api.node.navigate.git.prev, opts "Prev Git")
-    vim.keymap.set("n", "]c", api.node.navigate.git.next, opts "Next Git")
-    vim.keymap.set("n", "d", api.fs.remove, opts "Delete")
-    vim.keymap.set("n", "D", api.fs.trash, opts "Trash")
-    vim.keymap.set("n", "E", api.tree.expand_all, opts "Expand All")
-    vim.keymap.set("n", "e", api.fs.rename_basename, opts "Rename: Basename")
-    vim.keymap.set("n", "]e", api.node.navigate.diagnostics.next, opts "Next Diagnostic")
-    vim.keymap.set("n", "[e", api.node.navigate.diagnostics.prev, opts "Prev Diagnostic")
-    vim.keymap.set("n", "F", api.live_filter.clear, opts "Clean Filter")
-    vim.keymap.set("n", "f", api.live_filter.start, opts "Filter")
-    vim.keymap.set("n", "g?", api.tree.toggle_help, opts "Help")
-    vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts "Copy Absolute Path")
-    vim.keymap.set("n", "H", api.tree.toggle_hidden_filter, opts "Toggle Dotfiles")
-    vim.keymap.set("n", "I", api.tree.toggle_gitignore_filter, opts "Toggle Git Ignore")
-    vim.keymap.set("n", "J", api.node.navigate.sibling.last, opts "Last Sibling")
-    vim.keymap.set("n", "K", api.node.navigate.sibling.first, opts "First Sibling")
-    vim.keymap.set("n", "m", api.marks.toggle, opts "Toggle Bookmark")
-    vim.keymap.set("n", "o", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "O", api.node.open.no_window_picker, opts "Open: No Window Picker")
-    vim.keymap.set("n", "p", api.fs.paste, opts "Paste")
-    vim.keymap.set("n", "P", api.node.navigate.parent, opts "Parent Directory")
-    vim.keymap.set("n", "q", api.tree.close, opts "Close")
-    vim.keymap.set("n", "r", api.fs.rename, opts "Rename")
-    vim.keymap.set("n", "R", api.tree.reload, opts "Refresh")
-    vim.keymap.set("n", "s", api.node.run.system, opts "Run System")
-    vim.keymap.set("n", "S", api.tree.search_node, opts "Search")
-    vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts "Toggle Hidden")
-    vim.keymap.set("n", "W", api.tree.collapse_all, opts "Collapse")
-    vim.keymap.set("n", "x", api.fs.cut, opts "Cut")
-    vim.keymap.set("n", "y", api.fs.copy.filename, opts "Copy Name")
-    vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts "Copy Relative Path")
-    vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts "CD")
-    -- END_DEFAULT_ON_ATTACH
-
-    -- Mappings migrated from view.mappings.list
-    --
-    -- You will need to insert "your code goes here" for any mappings with a custom action_cb
-    vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "<CR>", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "o", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
-    vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
-end
-
-require("nvim-tree").setup {
-    on_attach = on_attach
-}
 
 -- autopairs
 local status_ok, autopairs = pcall(require, "nvim-autopairs")
 if status_ok then
-    autopairs.setup {}
+	autopairs.setup({})
 end
 
 -- zen mode
 local status_ok, true_zen = pcall(require, "true-zen")
 if status_ok then
-    true_zen.setup {
-        modes = {
-            ataraxis = {
-                callbacks = {
-                    open_pre = function()
-                        --
-                    end
-                }
-            }
-        }
-    }
+	true_zen.setup({
+		modes = {
+			ataraxis = {
+				callbacks = {
+					open_pre = function()
+						--
+					end,
+				},
+			},
+		},
+	})
+end
+
+-- neotree
+local status_ok, neotree = pcall(require, "neo-tree")
+if status_ok then
+	neotree.setup({
+		close_if_last_window = true,
+		window = {
+			position = "right",
+			width = 34,
+			mappings = {
+				["l"] = "open",
+			},
+		},
+		filesystem = {
+			filtered_items = {
+				hide_dotfiles = false,
+				hide_hidden = false,
+			},
+		},
+	})
+end
+
+-- LSP Stuff with mason
+local status_ok, mason = pcall(require, "mason")
+if status_ok then
+	mason.setup({})
+end
+
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if status_ok then
+	mason_lspconfig.setup({
+		ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "clangd", "asm_lsp" },
+	})
+end
+
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if status_ok then
+	local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+	lspconfig.lua_ls.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.rust_analyzer.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.tsserver.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.asm_lsp.setup({
+		capabilities = capabilities,
+	})
+
+	vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+	vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+end
+
+-- null ls
+local status_ok, null_ls = pcall(require, "null-ls")
+if status_ok then
+	null_ls.setup({
+		sources = {
+			null_ls.builtins.formatting.stylua,
+			null_ls.builtins.formatting.prettier,
+			null_ls.builtins.formatting.asmfmt,
+			require("none-ls.diagnostics.eslint_d"),
+		},
+	})
+
+	vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 end
 
 -- completion
 local status_ok, cmp = pcall(require, "cmp")
 if status_ok then
-    local status_luasnip, luasnip = pcall(require, "luasnip")
-    if status_luasnip then
-        cmp.setup {
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
-            },
-            mapping = {
-                ["<C-k>"] = cmp.mapping.select_prev_item(),
-                ["<C-j>"] = cmp.mapping.select_next_item(),
-                ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-                ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-                ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-                ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-                ["<C-e>"] = cmp.mapping {
-                    i = cmp.mapping.abort(),
-                    c = cmp.mapping.close(),
-                },
-                ["<CR>"] = cmp.mapping.confirm { select = true },
-            },
-        }
-    end
+	require("luasnip.loaders.from_vscode").lazy_load()
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				require("luasnip").lsp_expand(args.body)
+			end,
+		},
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
+		},
+		mapping = cmp.mapping.preset.insert({
+			["<C-k>"] = cmp.mapping.select_prev_item(),
+			["<C-j>"] = cmp.mapping.select_next_item(),
+			["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-e>"] = cmp.mapping.abort(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+		}),
+		sources = cmp.config.sources({
+			{ name = "nvim_lsp" },
+			{ name = "luasnip" },
+		}, {
+			{ name = "buffer" },
+		}),
+	})
 end
 
 -- colorscheme
-require('marine-dark').setup()
+local status_ok, marine_dark = pcall(require, "marine-dark")
+if status_ok then
+	marine_dark.setup({})
+end
 
 -- transparency
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'MsgArea', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "MsgArea", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "NONE" })

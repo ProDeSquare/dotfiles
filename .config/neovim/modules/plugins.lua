@@ -42,24 +42,42 @@ return packer.startup(function(use)
     use "numToStr/Comment.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use "JoosepAlviste/nvim-ts-context-commentstring"
-    use "nvim-tree/nvim-tree.lua"
     use "windwp/nvim-autopairs"
     use "Pocco81/TrueZen.nvim"
+
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
+
+    use "nvimtools/none-ls.nvim"
+    use "nvimtools/none-ls-extras.nvim"
+
     use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/cmp-path"
-    use "hrsh7th/cmp-cmdline"
-    use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-nvim-lua"
-    use "L3MON4D3/LuaSnip"
-    use "rafamadriz/friendly-snippets"
-    use "MarineDark/marine-dark.nvim"
+    use {
+        "L3MON4D3/LuaSnip",
+        requires = {
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets"
+        }
+    }
+
     use {
         "nvim-telescope/telescope.nvim",
         requires = {{ "nvim-lua/plenary.nvim" }}
     }
+    use "nvim-telescope/telescope-ui-select.nvim"
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        }
+    }
+
+    use "MarineDark/marine-dark.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
