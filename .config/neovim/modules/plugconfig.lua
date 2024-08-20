@@ -35,17 +35,15 @@ if status_ok then
 end
 
 -- zen mode
-local status_ok, true_zen = pcall(require, "true-zen")
+local status_ok, zen_mode = pcall(require, "zen-mode")
 if status_ok then
-	true_zen.setup({
-		modes = {
-			ataraxis = {
-				callbacks = {
-					open_pre = function()
-						--
-					end,
-				},
-			},
+	zen_mode.setup({
+		window = {
+			width = 0.75,
+            options = {
+                number = false,
+                relativenumber = false,
+            },
 		},
 	})
 end

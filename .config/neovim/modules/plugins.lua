@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use "windwp/nvim-autopairs"
-    use "Pocco81/TrueZen.nvim"
+    use "folke/zen-mode.nvim"
 
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
