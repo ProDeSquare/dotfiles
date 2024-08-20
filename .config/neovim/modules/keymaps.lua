@@ -8,6 +8,9 @@ end
 
 keymap("n", "<leader>w", ":w!<CR>")
 
+keymap("n", "j", "gj")
+keymap("n", "k", "gk")
+
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
