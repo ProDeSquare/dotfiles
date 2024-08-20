@@ -25,7 +25,8 @@ alias \
 	v="$EDITOR" \
     yt="youtube-dl --add-metadata -i" \
     ws="windscribe" \
-    svn="svn --config-dir \"$XDG_CONFIG_HOME/subversion\""
+    svn="svn --config-dir \"$XDG_CONFIG_HOME/subversion\"" \
+    gpa="git remote | xargs -I R git push R" # push to all remotes
 
 # package managers
 alias \
