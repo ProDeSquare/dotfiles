@@ -1,3 +1,4 @@
+[general]
 import = ["/home/hamza/.config/alacritty/colorschemes/marine-dark.toml"]
 live_config_reload = true
 
@@ -9,19 +10,19 @@ unfocused_hollow = true
 TERM = "xterm-256color"
 
 [font]
-size = 8
+size = 8.3
 
 [font.bold]
-family = "SF Mono Nerd Font"
+family = "GeistMono Nerd Font"
 
 [font.bold_italic]
-family = "SF Mono Nerd Font"
+family = "GeistMono Nerd Font"
 
 [font.italic]
-family = "SF Mono Nerd Font"
+family = "GeistMono Nerd Font"
 
 [font.normal]
-family = "SF Mono Nerd Font"
+family = "GeistMono Nerd Font"
 style = "Medium"
 
 [[keyboard.bindings]]
@@ -87,5 +88,5 @@ columns = 0
 lines = 0
 
 [window.padding]
-x = 22
+x = 26
 y = 25
