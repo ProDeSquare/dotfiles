@@ -24,7 +24,15 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-PROMPT="%{$fg[yellow]%}%n%{$reset_color%}@%M %{$fg[yellow]%}%~%{$reset_color%}\$vcs_info_msg_0_> " # user@host dir (git info)>
+prompt_pwd () {
+  local p=${${PWD:/~/\~}/#~\//\~/}
+  psvar[1]="${(@j[/]M)${(@s[/]M)p##*/}##(.|)?}$p:t"
+}
+
+precmd_functions+=(prompt_pwd)
+
+PROMPT="%{$fg[yellow]%}%n%{$reset_color%}@%M %{$fg[yellow]%}%1v%{$reset_color%}\$vcs_info_msg_0_> " # user@host dir (git info)>
+# PROMPT="%{$fg[yellow]%}%n%{$reset_color%}@%M %{$fg[yellow]%}%~%{$reset_color%}\$vcs_info_msg_0_> " # user@host dir (git info)>
 # PROMPT="%{$fg[blue]%}%~%{$reset_color%} " # dir
 # PROMPT="%{$fg[yellow]%}%n %{$fg[cyan]%}in %{$fg[yellow]%}%1~%{$reset_color%}\$vcs_info_msg_0_> " # user in dir (git info) >
 # PROMPT="%{$fg[yellow]%}%1~%{$reset_color%}\$vcs_info_msg_0_> " # dir (git info)>
