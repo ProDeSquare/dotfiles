@@ -7,7 +7,7 @@ function cmkd {
 function acp {
     git add .
     git commit -m "$1"
-    git push origin HEAD
+    git remote | xargs -I R git push R
 }
 
 function gh {
