@@ -78,7 +78,7 @@ end
 local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if status_ok then
 	mason_lspconfig.setup({
-		ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "clangd", "asm_lsp" },
+		ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "clangd", "asm_lsp" },
 	})
 end
 
@@ -92,7 +92,7 @@ if status_ok then
 	lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,
 	})
-	lspconfig.tsserver.setup({
+	lspconfig.ts_ls.setup({
 		capabilities = capabilities,
 	})
 	lspconfig.clangd.setup({
@@ -116,6 +116,7 @@ if status_ok then
 			null_ls.builtins.formatting.prettier,
 			null_ls.builtins.formatting.asmfmt,
 			require("none-ls.diagnostics.eslint_d"),
+			require("none-ls.formatting.autopep8"),
 		},
 	})
 
