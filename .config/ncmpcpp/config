@@ -29,5 +29,7 @@ titles_visibility = no
 
 statusbar_color = cyan
 
+startup_screen = browser
+
 execute_on_song_change = pkill -RTMIN+17 dwmblocks
 execute_on_player_state_change = pkill -RTMIN+17 dwmblocks
