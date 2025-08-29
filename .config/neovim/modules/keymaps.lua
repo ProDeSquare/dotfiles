@@ -19,10 +19,13 @@ keymap("n", "<C-l>", "<C-w>l")
 keymap("n", "<Tab>", ">>_")
 keymap("n", "<S-Tab>", "<<_")
 
+keymap("n", "<S-q>", ":bd<CR>")
 keymap("n", "<S-h>", ":bnext<CR>")
 keymap("n", "<S-l>", ":bprevious<CR>")
 
 keymap("n", "S", ":%s//g<Left><Left>")
+
+keymap("n", "<leader>tw", "<cmd>set wrap!<CR>")
 
 keymap("v", "<Tab>", ">gv")
 keymap("v", "<S-Tab>", "<gv")
@@ -30,3 +33,5 @@ keymap("v", "p", '"_dP')
 
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+keymap("i", "jk", "<ESC>")
