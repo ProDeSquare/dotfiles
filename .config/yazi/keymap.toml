@@ -78,7 +78,7 @@ desc = "Set temp wallpaper"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "j", "p", "g" ]
-run  = "plugin run-hovered jpg"
+run  = 'shell -- magick "%s" "%s.jpg"'
 desc = "Convert image to JPG"
 
 [[mgr.prepend_keymap]]
