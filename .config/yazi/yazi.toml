@@ -1,0 +1,40 @@
+[mgr]
+ratio           = [ 1, 2, 3]
+
+# sorting
+sort_by         = "mtime"
+sort_reverse    = true
+
+# mouse events
+mouse_events    = [ "click", "scroll", "touch", "move", "drag" ]
+
+# openers
+[opener]
+edit = [
+    { run = "$EDITOR %s", block = true },
+]
+image = [
+    { run = 'nsxiv -ab "%s"', orphan = true, desc = "Preview" }
+]
+video = [
+    { run = 'mpv "%s"', desc = "Play" }
+]
+pdf = [
+    { run = 'zathura "%s"', desc = "Open PDF", for = "unix" },
+]
+fallback = [
+    { run = 'xdg-open "%s"', orphan = true, desc = "Open with xdg-open" }
+]
+
+# Match MIME types
+[open]
+rules = [
+    { mime = "text/*", use = "edit" },
+    { mime = "application/json", use = "edit" },
+    { mime = "image/*", use = "image" },
+    { mime = "video/*", use = "video" },
+    { mime = "application/pdf", use = "pdf" },
+    { mime = "application/vnd*", use = "pdf" },
+    { mime = "application/epub*", use = "pdf" },
+    { mime = "*", use = "fallback" },
+]
