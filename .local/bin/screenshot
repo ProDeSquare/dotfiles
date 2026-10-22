@@ -12,4 +12,7 @@ case "$1" in
     *) SCR="$SCRDIR/screenshot_full-$(date '+%y%m%d_%H%M%S').png"; scrot -z "$SCR" ;;
 esac
 
-[ -f "$SCR" ] && notify-send "Screenshot" "Saved in your screenshots directory" -i $SCR
+if [ -f "$SCR" ]; then
+    xclip -selection clipboard -t image/png -i "$SCR"
+    notify-send "Screenshot" "Saved in your screenshots directory" -i $SCR
+fi
