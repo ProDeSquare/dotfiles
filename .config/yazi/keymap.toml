@@ -68,12 +68,12 @@ desc = "Restore trashed files"
 # Wallpaper
 [[mgr.prepend_keymap]]
 on   = [ "b", "g" ]
-run  = 'shell -- setbg "%h"'
+run  = 'shell -- setbg %h'
 desc = "Set wallpaper"
 
 [[mgr.prepend_keymap]]
 on   = [ "b", "b" ]
-run  = 'shell -- setwall "%h"'
+run  = 'shell -- setwall %h'
 desc = "Set temp wallpaper"
 
 [[mgr.prepend_keymap]]
