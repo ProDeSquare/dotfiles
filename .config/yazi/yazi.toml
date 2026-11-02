@@ -14,16 +14,16 @@ edit = [
     { run = "$EDITOR %s", block = true },
 ]
 image = [
-    { run = 'nsxiv -ab "%s"', orphan = true, desc = "Preview" }
+    { run = 'nsxiv -ab %s', orphan = true, desc = "Preview" }
 ]
 video = [
-    { run = 'mpv "%s"', desc = "Play" }
+    { run = 'mpv %s', desc = "Play" }
 ]
 pdf = [
-    { run = 'zathura "%s"', desc = "Open PDF", for = "unix" },
+    { run = 'zathura %s', desc = "Open PDF", for = "unix" },
 ]
 fallback = [
-    { run = 'xdg-open "%s"', orphan = true, desc = "Open with xdg-open" }
+    { run = 'xdg-open %s', orphan = true, desc = "Open with xdg-open" }
 ]
 
 # Match MIME types
